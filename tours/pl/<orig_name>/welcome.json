@@ -1,0 +1,10 @@
+{
+  "WELCOME.Title": "Witaj w Foundry Virtual Tabletop",
+  "WELCOME.Description": "Ten przewodnik pozwoli nowym użytkownikom zapoznać się z podstawami Foundry VTT.",
+  "WELCOME.WelcomeTitle": "Witaj w Foundry Virtual Tabletop",
+  "WELCOME.WelcomeContent": "Mamy nadzieję, że nasze oprogramowanie będzie niesamowitym narzędziem dla Ciebie i Twojej grupy. Foundry Virtual Tabletop ma wiele funkcji, o których należy się dowiedzieć, ale istnieją samouczki, przewodniki i inne zasoby, które pomogą ci znaleźć właściwą drogę.\nTo jest \"przewodnik\", który pomoże ci zapoznać się z podstawowymi funkcjami oprogramowania. Za pomocą przycisków w dolnej części okna można przechodzić do kolejnych etapów lub przewijać je do tyłu.",
+  "WELCOME.HelpTitle": "Dostępne zasoby",
+  "WELCOME.HelpContent": "Nie jesteś sam w nauce Foundry Virtual Tabletop, dostępnych jest wiele zasobów, które mogą Ci pomóc. Niektóre z najlepszych zasobów obejmują naszą oficjalną <a href='https://foundryvtt.com/kb/' target='_blank'>Bazę wiedzy</a> i <a href='https://foundryvtt.wiki/' target='_blank'>Wiki społeczności</a>. Możesz także dołączyć do naszego oficjalnego <a href='https://discord.gg/FoundryVTT' target='_blank'>serwera Discord</a>, gdzie mamy przyjazną społeczność gotową wspierać Cię w Twojej podróży!",
+  "WELCOME.ToursTitle": "Pierwsze kroki",
+  "WELCOME.ToursContent": "Jeśli jesteś nowym użytkownikiem, zalecamy poświęcenie 10 minut na zapoznanie się z dostępnymi przewodnikami, co pomoże Ci się lepiej zorientować. Możesz przeglądać swoje postępy w dostępnych przewodnikach lub powtarzać przewodniki, które wcześniej ukończyłeś, klikając przycisk Zarządzanie przewodnikami w zakładce Ustawienia na pasku bocznym."
+}
