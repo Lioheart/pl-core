@@ -1,0 +1,18 @@
+{
+  "UIOVERVIEW.Title": "Omówienie interfejsu użytkownika",
+  "UIOVERVIEW.Description": "Ten przewodnik daje ogólny pogląd na interfejs użytkownika",
+  "UIOVERVIEW.CanvasTitle": "Płótno",
+  "UIOVERVIEW.CanvasContent": "Duży środkowy obszar to <span class='reference'>płótno</span>. To tutaj wyświetlane są <span class='reference'>sceny</span> dla teatru wyobraźni, eksploracji i walki.",
+  "UIOVERVIEW.SidebarTitle": "Pasek boczny",
+  "UIOVERVIEW.SidebarContent": "<span class='reference'>Pasek boczny</span> to miejsce, w którym można znaleźć całą zawartość, taką jak <span class='reference'>dziennik czatu</span>, w którym przechowywane są wiadomości i rzuty, <span class='reference'>aktorzy</span> dla postaci graczy i postaci niezależnych, <span class='reference'>przedmioty</span> składające się na ekwipunek i umiejętności oraz wiele innych.",
+  "UIOVERVIEW.HotbarTitle": "Pasek szybkiego dostępu",
+  "UIOVERVIEW.HotbarContent": "Możesz przeciągać i upuszczać często używane przedmioty, zdolności i moce z karty postaci na </span>pasek szybkiego dostępu</span> lub tworzyć i uruchamiać niestandardowe <span class='reference'>makra</span>.",
+  "UIOVERVIEW.HotbarCollapseTitle": "Zwijanie paska szybkiego dostępu",
+  "UIOVERVIEW.HotbarCollapseContent": "Jeśli nie potrzebujesz paska szybkiego dostępu, możesz go zwinąć, aby nie przeszkadzał.",
+  "UIOVERVIEW.PlayersTitle": "Lista graczy",
+  "UIOVERVIEW.PlayersContent": "<span class='reference'>Lista graczy</span> pokazuje aktualnie połączonych <span class='reference'>użytkowników</span> i ich główne postacie. MG może kliknąć <span class='reference'>użytkownika</span> prawym przyciskiem myszy, aby go skonfigurować, wyrzucić lub zbanować, a także wciągnąć do aktualnie wybranej <span class='reference'>sceny</span>.",
+  "UIOVERVIEW.CanvasControlsTitle": "Elementy sterujące płótna",
+  "UIOVERVIEW.CanvasControlsContent": "<span class='reference'>Sterowanie wartwą płótna</span> pozwala kontrolować <span class='reference'>tokeny</span>, <span class='reference'>światła</span>, <span class='reference'>ściany</span> i inne elementy, które można umieścić na <span class='reference'>scenie</span>. Niektóre z tych narzędzi są dostępne tylko dla MG.",
+  "UIOVERVIEW.NavigationTitle": "Nawigacja scen",
+  "UIOVERVIEW.NavigationContent": "<span class='reference'>Pasek nawigacji</span> pokazuje bieżącą <span class='reference'>scenę</span> i inne, do których można uzyskać szybki dostęp. MG może kontrolować, które <span class='reference'>sceny</span> są tutaj widoczne, a kliknięcie prawym przyciskiem myszy na jednej z nich pozwoli <span class='reference action'>aktywować</span> ją jako główną scenę, która wciągnie do niej wszystkich <span class='reference'>użytkowników</span> lub <span class='reference action'>wstępnie załadować</span> scenę dla <span class='reference'>użytkowników</span> ze słabym połączeniem internetowym."
+}
