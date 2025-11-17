@@ -1,0 +1,45 @@
+{
+  "title": "TOURS.COMPAT.Title",
+  "description": "TOURS.COMPAT.Description",
+  "canBeResumed": false,
+  "display": true,
+  "closeWindows": false,
+  "steps": [
+    {
+      "id": "intro",
+      "title": "TOURS.COMPAT.Title",
+      "content": "TOURS.COMPAT.Purpose"
+    },
+    {
+      "id": "overview",
+      "title": "TOURS.COMPAT.OverviewT",
+      "content": "TOURS.COMPAT.OverviewC",
+      "selector": "#compatibility-checker ul.summary",
+      "tooltipDirection": "UP"
+    },
+    {
+      "id": "filterCompatibility",
+      "title": "TOURS.COMPAT.FilterCompatibilityT",
+      "content": "TOURS.COMPAT.FilterCompatibilityC",
+      "selector": "#compatibility-checker nav.filters"
+    },
+    {
+      "id": "filterCategory",
+      "title": "TOURS.COMPAT.FilterCategoryT",
+      "content": "TOURS.COMPAT.FilterCategoryC",
+      "selector": "#compatibility-checker aside",
+      "tooltipDirection": "RIGHT"
+    }
+  ],
+  "localization": {
+    "TOURS.COMPAT.Title": "Compatibility Preview Overview",
+    "TOURS.COMPAT.Description": "This tour covers a brief overview of the Compatibility Preview tool.",
+    "TOURS.COMPAT.Purpose": "This tour covers a brief overview of the Compatibility Preview tool. The tool's purpose is to check the compatibility of your currently-installed Worlds, Systems, and Modules against the next version of Foundry Virtual Tabletop. It will tell you whether a compatible version of each package exists. That may be the currently-installed version, or some newer version.",
+    "TOURS.COMPAT.OverviewT": "Overall Status",
+    "TOURS.COMPAT.OverviewC": "To see the overall status of your packages in the next version at-a-glance, you can check the bottom-left of of the display.",
+    "TOURS.COMPAT.FilterCompatibilityT": "Individual Packages",
+    "TOURS.COMPAT.FilterCompatibilityC": "You can use this toggle to show only the packages that are compatible, or only the packages that are incompatible with the next version.",
+    "TOURS.COMPAT.FilterCategoryT": "Category Filter",
+    "TOURS.COMPAT.FilterCategoryC": "To check invididual categories of packages, you can select that category from the list here."
+  }
+}

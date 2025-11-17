@@ -1,7 +1,7 @@
 {
   "id": "PolishCore",
   "title": "Polska wersja Foundry [Core]",
-  "description": "Polska wersja językowa aplikacji Foundry VTT",
+  "description": "Polska wersja językowa aplikacji Foundry VTT.",
   "version": "vDev",
   "styles": [
     "styles/style.css"
@@ -18,7 +18,7 @@
       "name": "Jakub",
       "discord": "lioheart77",
       "flags": {}
-    }.
+    },
     {
       "name": "Damian",
       "flags": {}
