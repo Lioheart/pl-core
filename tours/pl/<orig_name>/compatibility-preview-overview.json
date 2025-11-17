@@ -1,0 +1,11 @@
+{
+  "TOURS.COMPAT.Title": "Omówienie podglądu zgodności",
+  "TOURS.COMPAT.Description": "Ten przewodnik obejmuje krótki przegląd narzędzia Podgląd zgodności.",
+  "TOURS.COMPAT.Purpose": "Ten przewodnik obejmuje krótki przegląd narzędzia Podgląd kompatybilności. Celem narzędzia jest sprawdzenie kompatybilności aktualnie zainstalowanych światów, systemów i modułów z następną wersją Foundry Virtual Tabletop. Poinformuje cię, czy istnieje kompatybilna wersja każdego pakietu. Może to być aktualnie zainstalowana wersja lub nowsza wersja.",
+  "TOURS.COMPAT.OverviewT": "Status ogólny",
+  "TOURS.COMPAT.OverviewC": "Aby zobaczyć ogólny stan pakietów w następnej wersji w skrócie, możesz sprawdzić lewą dolną część wyświetlacza.",
+  "TOURS.COMPAT.FilterCompatibilityT": "Pakiety indywidualne",
+  "TOURS.COMPAT.FilterCompatibilityC": "Możesz użyć tego przełącznika, aby wyświetlić tylko pakiety, które są kompatybilne lub tylko te, które są niekompatybilne z następną wersją.",
+  "TOURS.COMPAT.FilterCategoryT": "Filtr kategorii",
+  "TOURS.COMPAT.FilterCategoryC": "Jeśli zależy ci tylko na jednej konkretnej kategorii pakietów, na przykład chcesz tylko sprawdzić, czy twoje światy są kompatybilne z następną wersją, możesz wybrać tę kategorię z listy tutaj."
+}
