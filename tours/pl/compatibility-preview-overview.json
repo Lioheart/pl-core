@@ -6,8 +6,6 @@
   "TOURS.COMPAT.OverviewC": "Aby zobaczyć ogólny stan pakietów w następnej wersji w skrócie, możesz sprawdzić lewą dolną część wyświetlacza.",
   "TOURS.COMPAT.FilterCompatibilityT": "Pakiety indywidualne",
   "TOURS.COMPAT.FilterCompatibilityC": "Możesz użyć tego przełącznika, aby wyświetlić tylko pakiety, które są kompatybilne lub tylko te, które są niekompatybilne z następną wersją.",
-  "TOURS.COMPAT.FilterPackageTypeT": "Obejmuje światy",
-  "TOURS.COMPAT.FilterPackageTypeC": "Światy nie są uwzględnione na pełnej liście pakietów, ponieważ ich kompatybilność jest zazwyczaj powiązana z systemem gry. Jeśli chcesz uwzględnić światy, możesz to zrobić za pomocą tego przełącznika.",
   "TOURS.COMPAT.FilterCategoryT": "Filtr kategorii",
   "TOURS.COMPAT.FilterCategoryC": "Jeśli zależy ci tylko na jednej konkretnej kategorii pakietów, na przykład chcesz tylko sprawdzić, czy twoje światy są kompatybilne z następną wersją, możesz wybrać tę kategorię z listy tutaj."
 }
