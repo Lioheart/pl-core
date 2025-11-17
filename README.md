@@ -1,2 +1,2 @@
-# pl-core
-Polskie tłumaczenie Foundry.
+# Polskie tłumaczenie Foundry
+Moduł zawierający pełne tłumaczenie Foundry VTT.

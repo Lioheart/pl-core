@@ -1,0 +1,20 @@
+{
+  "CREATINGAWORLD.Title": "Tworzenie świata",
+  "CREATINGAWORLD.Description": "Ten przewodnik poprowadzi cię przez proces tworzenia pierwszego Świata",
+  "CREATINGAWORLD.WorldsTabTitle": "Zakładka Światy",
+  "CREATINGAWORLD.WorldsTabContent": "Ta zakładka pokazuje wszystkie aktualnie utworzone światy. Obecnie nie masz żadnego utworzonego świata, więc przeprowadzimy cię przez proces jego tworzenia.",
+  "CREATINGAWORLD.CreateWorldTitle": "Tworzenie świata",
+  "CREATINGAWORLD.CreateWorldContent": "Przycisk Utwórz świat znajduje się w prawym dolnym rogu i otworzy okno konfiguracji.",
+  "CREATINGAWORLD.WorldTitleTitle": "Tytuł Świata",
+  "CREATINGAWORLD.WorldTitleContent": "Tytuł świata to nazwa świata. Służy do identyfikacji świata w zakładce Świat.",
+  "CREATINGAWORLD.WorldIdTitle": "ID Świata",
+  "CREATINGAWORLD.WorldIdContent": "ID Świata to unikalny identyfikator świata. Folder o tym samym identyfikatorze zostanie utworzony w celu przechowywania danych świata. Identyfikator jest automatycznie ustawiany na przyjazną dla maszyn wersję tytułu, ale można go zmienić.",
+  "CREATINGAWORLD.WorldSystemTitle": "System świata",
+  "CREATINGAWORLD.WorldSystemContent": "Lista rozwijana System pozwala wybrać system gry, dla którego ma zostać utworzony świat. Możesz wybrać dowolny system gry zainstalowany na komputerze. Na razie wybierzemy system, który właśnie zainstalowałeś.",
+  "CREATINGAWORLD.WorldDescriptionTitle": "Inne pola",
+  "CREATINGAWORLD.WorldDescriptionContent": "Inne pola, takie jak Opis, nie są wymagane. Więcej informacji na ich temat można znaleźć w naszej dokumentacji <a href='https://foundryvtt.com/article/game-worlds/' target='_blank'>World</a>.",
+  "CREATINGAWORLD.CreateTitle": "Stwórz świat",
+  "CREATINGAWORLD.CreateContent": "Po zakończeniu konfiguracji przycisk Utwórz spowoduje utworzenie świata. Większość ustawień świata można zmienić później, edytując istniejący świat.",
+  "CREATINGAWORLD.LaunchingTitle": "Uruchomienie",
+  "CREATINGAWORLD.LaunchingContent": "Wszystko gotowe! Możesz teraz rozpocząć grę w swoim świecie, klikając przycisk Uruchom świat."
+}

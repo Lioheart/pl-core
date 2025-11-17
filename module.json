@@ -1,0 +1,87 @@
+{
+  "id": "PolishCore",
+  "title": "Polska wersja Foundry [Core]",
+  "description": "Polska wersja językowa aplikacji Foundry VTT",
+  "version": "vDev",
+  "styles": [
+    "styles/style.css"
+  ],
+  "esmodules": [
+    "scripts/script.js"
+  ],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13.351"
+  },
+  "authors": [
+    {
+      "name": "Jakub",
+      "discord": "lioheart77",
+      "flags": {}
+    }.
+    {
+      "name": "Damian",
+      "flags": {}
+    }
+  ],
+  "languages": [
+    {
+      "lang": "pl",
+      "name": "Polski",
+      "path": "lang/pl.json",
+      "flags": {}
+    },
+    {
+      "lang": "pl",
+      "name": "Przewodnik: Omówienie kopii zapasowych",
+      "path": "tours/backups-overview.json",
+      "flags": {}
+    },
+    {
+      "lang": "pl",
+      "name": "Przewodnik: Elementy sterujące płótna",
+      "path": "tours/canvas-controls.json",
+      "flags": {}
+    },
+    {
+      "lang": "pl",
+      "name": "Przewodnik: Omówienie podglądu zgodności",
+      "path": "tours/compatibility-preview-overview.json",
+      "flags": {}
+    },
+    {
+      "lang": "pl",
+      "name": "Przewodnik: Tworzenie świata",
+      "path": "tours/creating-a-world.json",
+      "flags": {}
+    },
+    {
+      "lang": "pl",
+      "name": "Przewodnik: Instalacja systemu",
+      "path": "tours/installing-a-system.json",
+      "flags": {}
+    },
+    {
+      "lang": "pl",
+      "name": "Przewodnik: Pasek boczny",
+      "path": "tours/sidebar.json",
+      "flags": {}
+    },
+    {
+      "lang": "pl",
+      "name": "Przewodnik: Omówienie interfejsu użytkownika",
+      "path": "tours/ui-overview.json",
+      "flags": {}
+    },
+    {
+      "lang": "pl",
+      "name": "Przewodnik: Witaj w Foundry Virtual Tabletop",
+      "path": "tours/welcome.json",
+      "flags": {}
+    }
+  ],
+  "coreTranslation": true,
+  "url": "Filled in by the release workflow",
+  "manifest": "Filled in by the release workflow",
+  "download": "Filled in by the release workflow"
+}

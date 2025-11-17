@@ -1,0 +1,12 @@
+{
+  "INSTALLINGASYSTEM.Title": "Instalacja systemu",
+  "INSTALLINGASYSTEM.Description": "Ten przewodnik przeprowadzi Cię przez proces instalacji pierwszego systemu.",
+  "INSTALLINGASYSTEM.SystemsTabTitle": "Zakładka Systemy gier",
+  "INSTALLINGASYSTEM.SystemsTabContent": "Ta zakładka pokazuje wszystkie aktualnie zainstalowane systemy. Obecnie nie masz żadnego zainstalowanego, więc zainstalujmy jeden z nich.",
+  "INSTALLINGASYSTEM.BrowseTitle": "Przycisk Zainstaluj system",
+  "INSTALLINGASYSTEM.BrowseContent": "Ten przycisk uruchomi przeglądarkę dostępnych systemów",
+  "INSTALLINGASYSTEM.SearchingTitle": "Wyszukiwanie",
+  "INSTALLINGASYSTEM.SearchingContent": "Istnieją setki systemów dostępnych dla Foundry, a kolejne są regularnie dodawane. Jeśli wybrana przez ciebie gra TTRPG nie została jeszcze zaimplementowana, istnieją również elastyczne systemy do gry ogólnej. Znajdźmy jeden z nich — \"Simple World Building\".",
+  "INSTALLINGASYSTEM.InstallTitle": "Instalowanie systemu",
+  "INSTALLINGASYSTEM.InstallContent": "Po znalezieniu odpowiedniego systemu, kliknij przycisk \"Zainstaluj\". Możesz zainstalować dowolną liczbę systemów - zachęcamy do wypróbowania - a następnie przejdź do zakładki \"Światy gier\", gdy będziesz gotowy do stworzenia swojego pierwszego świata."
+}

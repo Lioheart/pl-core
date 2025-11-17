@@ -1,0 +1,57 @@
+@font-face {
+    font-family: "Skorzhen";
+    src: url('skorzhen.ttf');
+}
+
+body {
+    --font-h1: "Skorzhen", "Modesto Condensed", serif;
+    --font-h6: "Skorzhen", "Modesto Condensed", serif;
+}
+
+body.auth #main-header h1 {
+    font-variant-caps: small-caps;
+    font-weight: 500;
+}
+
+.window-app .window-header .window-title {
+    font-family: var(--font-body);
+}
+
+/* Błędy, ekran główny */
+h4.ellipsis {
+    font-family: var(--font-body);
+}
+
+/* Ustawienia gry, Pomoc i dokumentacja, Dostęp do gry */
+/* Tytuł na pasku ustawień */
+h4.divider, h1.title {
+    font-variant-caps: small-caps;
+    letter-spacing: 1px;
+}
+
+h4.divider {
+    font-weight: normal;
+}
+
+/* Dla h4 w ustawieniach */
+.tab.active[data-tab="pf2e-hud"] h4 {
+  font-variant-caps: small-caps;
+  font-weight: normal;
+}
+
+/* Tabele losowe - tytuł */
+.roll-table-sheet.view-mode header.sheet-header h1,
+.roll-table-sheet.view-mode header.sheet-header h4 {
+    font-weight: normal;
+}
+
+/* pf2e RPG numbers, sekcja ustawień, opcjonalne zależności */
+#pf2e-rpg-numbers-settings-form.application h4,
+#pf2e-rpg-numbers-actor-settings-form h4,
+section.tab.scrollable.active h4,
+.bestiary-settings-menu .menu-category legend h4, 
+p.hint h4 {
+  font-variant-caps: small-caps;
+  letter-spacing: 1px;
+  font-weight: normal;
+}
