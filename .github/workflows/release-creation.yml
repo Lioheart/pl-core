@@ -13,47 +13,52 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Detect branch name of the release tag
-      - name: Detect branch
+      # Detect v13 or v14 branch based on tag prefix
+      - name: Detect FVTT branch
         id: detect_branch
         run: |
           TAG="${{ github.event.release.tag_name }}"
-          # Expected: v13.x.y or v14.x.y
+
           if [[ "$TAG" == v13* ]]; then
             echo "branch=v13" >> $GITHUB_OUTPUT
-            echo "manifestFile=module-v13.json" >> $GITHUB_OUTPUT
           elif [[ "$TAG" == v14* ]]; then
             echo "branch=v14" >> $GITHUB_OUTPUT
-            echo "manifestFile=module-v14.json" >> $GITHUB_OUTPUT
           else
-            echo "ERROR: Tag must start with v13 or v14"
+            echo "ERROR: tag must start with v13 or v14"
             exit 1
           fi
 
-      # Copy base manifest into branch-specific one
-      - name: Prepare branch manifest
-        run: |
-          cp module.json ${{ steps.detect_branch.outputs.manifestFile }}
-
-      # Substitute variables in the manifest
+      # Update module.json with version, manifest and download pointing to THIS release
       - name: Populate Versioned keys in Manifest
         id: sub_manifest
         uses: microsoft/variable-substitution@v1
         with:
-          files: '${{ steps.detect_branch.outputs.manifestFile }}'
+          files: 'module.json'
         env:
           version: ${{ github.event.release.tag_name }}
           url: https://github.com/${{ github.repository }}
-          manifest: https://github.com/${{ github.repository }}/releases/download/${{ github.event.release.tag_name }}/${{ steps.detect_branch.outputs.manifestFile }}
+          manifest: https://github.com/${{ github.repository }}/releases/download/${{ github.event.release.tag_name }}/module.json
           download: https://github.com/${{ github.repository }}/releases/download/${{ github.event.release.tag_name }}/module.zip
 
-      # Create ZIP
+      # 🟦 Move tours/pl → tours/ and delete pl folder
+      - name: Flatten tours/pl directory
+        run: |
+          if [ -d "tours/pl" ]; then
+            echo "Moving files from tours/pl/ → tours/"
+            mv tours/pl/* tours/ || true
+            echo "Removing tours/pl"
+            rm -rf tours/pl
+          else
+            echo "No tours/pl directory found — skipping"
+          fi
+
+      # 🟦 Create ZIP using your folder list
       - name: Create Module Archive
         run: |
           zip --recurse-paths ./module.zip \
             module.json lang/ scripts/ styles/ tours/
 
-      # Upload release assets
+      # Upload assets to the release
       - name: Update Release with Files
         uses: ncipollo/release-action@v1
         with:
@@ -62,6 +67,6 @@ jobs:
           draft: ${{ github.event.release.draft }}
           prerelease: ${{ github.event.release.prerelease }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "./${{ steps.detect_branch.outputs.manifestFile }}, ./module.zip"
+          artifacts: "./module.json, ./module.zip"
           tag: ${{ github.event.release.tag_name }}
           body: ${{ github.event.release.body }}
