@@ -1,8 +1,0 @@
-{
-  "TOURS.BACKUPS.Title": "Omówienie kopii zapasowych",
-  "TOURS.BACKUPS.Description": "Ten przewodnik obejmuje krótki przegląd wbudowanych funkcji kopii zapasowych Foundry VTT.",
-  "TOURS.BACKUPS.IndividualPackagesT": "Tworzenie kopii zapasowych pakietów",
-  "TOURS.BACKUPS.IndividualPackagesC": "Możesz kliknąć prawym przyciskiem myszy dowolny pakiet, aby wyświetlić menu kontekstowe. Z tego miejsca można tworzyć, przywracać lub zarządzać kopiami zapasowymi danego pakietu.<video src=\"toolclips/backups/create-backup.webm\" autoplay muted loop></video>",
-  "TOURS.BACKUPS.ManageBackupsT": "Zarządzanie wszystkimi kopiami zapasowymi",
-  "TOURS.BACKUPS.ManageBackupsC": "Interfejs do zarządzania wszystkimi istniejącymi kopiami zapasowymi i migawkami można znaleźć, klikając ten przycisk w prawym górnym rogu."
-}
