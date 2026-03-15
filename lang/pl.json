@@ -619,7 +619,6 @@
   "TileSelect": "Zaznacz kafelki",
   "TilePlace": "Umieść kafelki",
   "TilePlaceHeading": "Miejsce",
-  "TileForeground": "Warstwa pierwszego planu",
   "TileBrowser": "Przeglądarka kafelków",
   "GroupDrawing": "Narzędzia do rysowania",
   "DrawingSelect": "Zaznacz rysunki",
@@ -631,27 +630,25 @@
   "DrawingText": "Umieść tekst",
   "DrawingClear": "Wyczyść rysunki",
   "DrawingConfig": "Konfiguracja rysunku",
-  "DrawingRole": "Przełącznik informacji rysunków",
   "GroupWall": "Sterowanie ścianami",
   "WallDraw": "Narysuj ścianę",
-  "WallBasic": "Podstawowe ściany",
-  "WallBasicBlocks": "Ruch, widzenie i słuch",
-  "WallInvisible": "Niewidzialne ściany",
+  "WallSolid": "Ściana pełna",
+  "WallSolidBlocks": "Ruch, widzenie i słuch",
+  "WallInvisible": "Ściana niewidzialna",
   "WallInvisibleBlocks": "Ruch",
-  "WallTerrain": "Ściany terenu",
+  "WallTerrain": "Ściana terenowa",
   "WallTerrainBlocks": "Wzrok poza drugą ścianą, ruch i słuch",
-  "WallEthereal": "Eteryczne ściany",
+  "WallEthereal": "Ściana eteryczna",
   "WallEtherealBlocks": "Wzrok i słuch",
-  "WallDoors": "Narysuj drzwi",
-  "DoorBlocks": "Ruch, widzenie i słuch, o ile nie zostaną otwarte",
+  "WallDoor": "Drzwi",
+  "WallDoorBlocks": "Ruch, widzenie i słuch, o ile nie zostaną otwarte",
   "WallSecret": "Sekretne drzwi",
   "WallSecretHidden": "Ukryty",
   "WallSecretHiddenP": "Ukryte drzwi nie mogą być widoczne przez graczy",
-  "WallSelect": "Prostokątne zaznaczanie ścian",
+  "WallSelect": "Wybierz ściany",
   "CommonMoveWithoutSnapping": "Przenieś bez przyciągania",
   "WallSelectEdit": "<span class=\"reference\">Podwójne Kliknięcie</span> na Punkcie Ściany",
   "WallSnapP": "Punkty ściany przyciągają się do najbliższego rogu siatki, gdy jest aktywne",
-  "WallClone": "Klonuj ściany",
   "WallCloseDoors": "Zamknij wszystkie drzwi",
   "WallDoorsClosed": "Zamknięte {number} drzwi",
   "WallClear": "Wyczyść ściany",
@@ -1113,16 +1110,30 @@
     "ROUNDS": {
       "one": "1 runda",
       "two": "2 rundy",
-      "few": "{rounds} rundy",
+      "few": "{rounds} rund",
       "many": "{rounds} rund",
       "other": "{rounds} rund"
+    },
+    "ROUNDS_AGO": {
+      "one": "1 runda temu",
+      "two": "2 rundy temu",
+      "few": "{rounds} rundy temu",
+      "many": "{rounds} rund temu",
+      "other": "{rounds} rundy temu"
     },
     "TURNS": {
       "one": "1 tura",
       "two": "2 tury",
-      "few": "{turns} tury",
+      "few": "{turns} tur",
       "many": "{turns} tur",
       "other": "{turns} tur"
+    },
+    "TURNS_AGO": {
+      "one": "1 tura temu",
+      "two": "2 tury temu",
+      "few": "{turns} tury temu",
+      "many": "{turns} tur temu",
+      "other": "{turns} tury temu"
     },
     "EXPIRY_EVENTS": {
       "combatStart": "Rozpoczęcie walki",
@@ -1336,8 +1347,12 @@
   },
   "TAGS": {
     "Add": "Dodaj tag",
+    "AddGridOffset": "Dodaj przesunięcie siatki",
     "Remove": "Usuń tag",
+    "RemoveGridOffset": "Usuń przesunięcie siatki",
     "ErrorBlank": "Znaczniki w elemencie HTMLStringTagsElement nie mogą być puste.",
+    "ErrorInvalidGridOffset2D": "Przesunięcie siatki 2D musi składać się z dwóch współrzędnych całkowitoliczbowych, oddzielonych kropką.",
+    "ErrorInvalidGridOffset3D": "Przesunięcie siatki 3D musi zawierać trzy współrzędne całkowitoliczbowe, oddzielone kropkami.",
     "ErrorNonUnique": "Znacznik \"{tag}\" jest już ustawiony."
   }
 },
@@ -1676,7 +1691,9 @@
     "animation": {
       "label": "Animacja światła",
       "type": {
-        "label": "Typ animacji światła"
+        "label": "Typ animacji światła",
+        "any": "Dowolny",
+        "none": "Brak animacji"
       },
       "speed": {
         "label": "Prędkość animacji",
@@ -2108,7 +2125,7 @@
     "MODES": {
       "DISABLED": "Brak",
       "INDIVIDUAL": "Indywidualny",
-      "SHARED": "Współdzielony"
+      "SHARED": "Wspólny"
     },
     "mode": {
       "label" : "Tryb eksploracji",
@@ -2336,7 +2353,11 @@
     "upnp.label": "Włącz UPnP",
     "port": {
       "label": "Port",
-      "hint": "Wybierz port, którego Foundry Virtual Tabletop używa do ruchu połączeń TCP, oraz włącz lub wyłącz funkcję Universal Plug and Play (UPnP)."
+      "hint": "Wybierz numer portu, którego program Foundry Virtual Tabletop będzie używał do połączeń TCP. Możesz również włączyć lub wyłączyć funkcję Universal Plug and Play (UPnP)."
+    },
+    "unixSocket": {
+      "label": "Gniazdo Unix",
+      "hint": "Zamiast numeru portu można podać ścieżkę do gniazda domenowego systemu Unix. Jeśli podano zarówno numer portu, jak i ścieżkę do gniazda, zostanie użyta ścieżka do gniazda."
     },
     "compressStatic": {
       "label": "Kompresja plików statycznych",
@@ -3262,9 +3283,11 @@
         "hint": "Górna część zakresu wysokości."
       }
     },
-    "attachedToken": {
-      "label": "Przyłączony token",
-      "hint": "Token, do którego przypisana jest strefa. Po przeniesieniu tego tokenu strefa jest przenoszona wraz z nim."
+    "attachment": {
+      "token": {
+        "label": "Przyłączony token",
+        "hint": "Token, do którego przypisana jest strefa. Po przeniesieniu tego tokenu strefa jest przenoszona wraz z nim."
+      }
     },
     "restriction": {
       "enabled": {
@@ -3405,6 +3428,7 @@
   },
   "NOTIFICATIONS": {
     "PlacedRegionRotationNotAllowed": "Nie można obracać kształtu umieszczonej strefy.",
+    "PlacedRegionNotAttachedToToken": "Umieszczona strefa musi być przypisana do tokenu.",
     "CopiedShape": "Skopiowano kształt strefy.",
     "CutShape": "Wytnij kształt strefy.",
     "PastedShape": "Wklejono kształt strefy.",
@@ -3716,6 +3740,7 @@
     },
     "Bottom": "Na dole",
     "Title": "Filtr zaawansowany",
+    "Level": "Filtruj według poziomu",
     "Tooltip": "Zaawansowane filtry. Kliknij prawym przyciskiem myszy, aby wyczyścić.",
     "Top": "U góry"
   },
@@ -3725,6 +3750,7 @@
   "WALLS": {
     "door": "Drzwi",
     "ethereal": "Eteryczne ściany",
+    "filterByCategory": "Filtruj według kategorii",
     "invisible": "Niewidzialne ściany",
     "normal": "Normalne ściany",
     "secret": "Sekretne drzwi",
@@ -3901,7 +3927,15 @@
     "modes.label": "Tryby okluzji",
     "alpha.label": "Okluzja Alfa"
   },
+  "OCCLUSION_MODES": {
+    "FADE.label": "Zanikanie",
+    "NONE.label": "Brak",
+    "RADIAL.label": "Promieniowy",
+    "SURFACE.label": "Powierzchnia",
+    "VISION.label": "Widzenie"
+  },
   "restrictions": {
+    "label": "Ograniczenia",
     "light": {
       "label": "Ogranicz światło",
       "hint": "Czy źródła światła są blokowane na podstawie ich wysokości względem wysokości tej płytki?"
@@ -4005,6 +4039,9 @@
   "basic": "Podstawowa konfiguracja",
   "animation": "Animacja światła",
   "advanced": "Zaawansowane opcje"
+},
+"TOKEN.NOTIFICATIONS": {
+  "PlacedTokenRotationNotAllowed": "Nie możesz obrócić umieszczonego tokenu."
 },
 "TOKEN.FIELDS": {
   "name.label": "Nazwa Tokena",
@@ -4449,6 +4486,8 @@
 "USERS.KeyShow": "Pokaż hasło",
 "USERS.Create": "Stwórz nowego użytkownika",
 "USERS.Delete": "Usuń użytkownika",
+"USERS.LoginAs": "Zaloguj się jako użytkownik",
+"USERS.LoginAsGMRequired": "Aby zalogować się jako inny użytkownik, musisz być Mistrzem Gry.",
 "USERS.DeleteName": "Usuń użytkownika: {name}",
 "USERS.Launch": "Zapisz i wróć",
 "USERS.FirstLaunch": "Zapisz i kontynuuj",
@@ -4795,6 +4834,13 @@
       },
       "position.label": "Pozycja",
       "dimensions.label": "Wymiary"
+    },
+    "grid": {
+      "name": "Pola siatki",
+      "FIELDS": {
+        "offsets.label": "Przesunięcia siatki",
+        "origin.label": "Źródło"
+      }
     }
   },
   "ACTIONS": {
