@@ -13,12 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Detect v13 or v14 branch based on tag prefix
+      # Wykrywamy wersję główną (v13/v14), która posłuży jako stały tag w URLach
       - name: Detect FVTT branch
         id: detect_branch
         run: |
           TAG="${{ github.event.release.tag_name }}"
-
           if [[ "$TAG" == v13* ]]; then
             echo "branch=v13" >> $GITHUB_OUTPUT
           elif [[ "$TAG" == v14* ]]; then
@@ -28,45 +27,40 @@ jobs:
             exit 1
           fi
 
-      # Update module.json with version, manifest and download pointing to THIS release
+      # Używamy identyfikatora brancha (v13 lub v14) w linkach zamiast zmiennego tagu
       - name: Populate Versioned keys in Manifest
         id: sub_manifest
         uses: microsoft/variable-substitution@v1
         with:
           files: 'module.json'
         env:
-          version: ${{ github.event.release.name }}
+          version: ${{ github.event.release.tag_name }}
           url: https://github.com/${{ github.repository }}
-          manifest: https://github.com/${{ github.repository }}/releases/download/${{ github.event.release.tag_name }}/module.json
-          download: https://github.com/${{ github.repository }}/releases/download/${{ github.event.release.tag_name }}/module.zip
+          manifest: https://github.com/${{ github.repository }}/releases/download/${{ steps.detect_branch.outputs.branch }}/module.json
+          download: https://github.com/${{ github.repository }}/releases/download/${{ steps.detect_branch.outputs.branch }}/module.zip
 
-      # 🟦 Move tours/pl → tours/ and delete pl folder
       - name: Flatten tours/pl directory
         run: |
           if [ -d "tours/pl" ]; then
-            echo "Moving files from tours/pl/ → tours/"
             mv tours/pl/* tours/ || true
-            echo "Removing tours/pl"
             rm -rf tours/pl
-          else
-            echo "No tours/pl directory found — skipping"
           fi
 
-      # 🟦 Create ZIP using your folder list
       - name: Create Module Archive
         run: |
           zip --recurse-paths ./module.zip \
             module.json lang/ scripts/ styles/ tours/
 
-      # Upload assets to the release
-      - name: Update Release with Files
+      # To jest kluczowy krok: 
+      # Publikujemy pliki pod stałym tagiem (v13 lub v14), nadpisując poprzednie.
+      - name: Update Static Release with Files
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
-          name: ${{ github.event.release.name }}
-          draft: ${{ github.event.release.draft }}
-          prerelease: ${{ github.event.release.prerelease }}
+          name: Release ${{ steps.detect_branch.outputs.branch }}
+          tag: ${{ steps.detect_branch.outputs.branch }} # Tutaj wymuszamy stały tag
+          commit: ${{ github.sha }}
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "./module.json, ./module.zip"
-          tag: ${{ github.event.release.tag_name }}
-          body: ${{ github.event.release.body }}
+          makeLatest: true
+          body: "Last updated by release ${{ github.event.release.tag_name }}"
