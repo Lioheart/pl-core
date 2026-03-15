@@ -74,7 +74,7 @@
 "Save Changes": "Zapisz zmiany",
 "Scale": "Skala",
 "Scope": "Zakres",
-"Seconds": "Sekundy1",
+"Seconds": "Sekund",
 "selected": "wybrany",
 "SelectAll": "Zaznacz wszystko",
 "Sight": "Wzrok",
@@ -3514,8 +3514,8 @@
   },
   "Now": "Teraz",
   "Second": {
-    "one": "Sekunda2",
-    "other": "Sekundy3",
+    "one": "Sekunda",
+    "other": "Sekundy",
     "abbr": "s"
   },
   "Since": "{since} temu",
