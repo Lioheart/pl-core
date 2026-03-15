@@ -3514,8 +3514,8 @@
   },
   "Now": "Teraz",
   "Second": {
-    "one": "Sekunda2",
-    "other": "Sekundy3",
+    "one": "Sekunda",
+    "other": "Sekundy",
     "abbr": "s"
   },
   "Since": "{since} temu",
