@@ -74,7 +74,7 @@
 "Save Changes": "Zapisz zmiany",
 "Scale": "Skala",
 "Scope": "Zakres",
-"Seconds": "Sekundy",
+"Seconds": "Sekundy1",
 "selected": "wybrany",
 "SelectAll": "Zaznacz wszystko",
 "Sight": "Wzrok",
@@ -1921,7 +1921,7 @@
     },
     "thickness.label": "Grubość siatki",
     "color.label": "Kolor siatki",
-    "alpha.label": "Nieprzezroczystość siatki",
+    "alpha.label": "Przezroczystość siatki",
     "distance.label": "Dystans",
     "units.label": "Jednostki",
     "style.label": "Styl siatki"
@@ -2284,8 +2284,8 @@
     },
     "fade": {
       "opacity": {
-        "label": "Nieprzezroczystość nieaktywnych okien",
-        "hint": "Nieprzezroczystość wyblakłych elementów interfejsu użytkownika, gdy nie są one aktywne. Niższe wartości oznaczają większą przezroczystość."
+        "label": "Przezroczystość nieaktywnych okien",
+        "hint": "Przezroczystość wyblakłych elementów interfejsu użytkownika, gdy nie są one aktywne. Niższe wartości oznaczają większą przezroczystość."
       },
       "speed": {
         "label": "Szybkość zanikania",
@@ -2920,7 +2920,7 @@
 "PERMISSION.FilesUploadHint": "Zezwalaj graczom o tej roli na wysyłanie zawartości na serwer używając Przeglądarki Plików",
 "PERMISSION.JournalCreate": "Stwórz notatki",
 "PERMISSION.JournalCreateHint": "Zezwalaj graczom o tej roli na tworzenie nowych wpisów na pasku bocznym dziennika",
-"PERMISSION.MacroScript": "Modyfikowanie Makr Skryptu i wykonywanie Zachowań Strefy",
+"PERMISSION.MacroScript": "Modyfikowanie makr i wykonywanie zachowań strefy",
 "PERMISSION.MacroScriptHint": "Zezwalaj użytkownikom z tą rolą na używanie makr JavaScript, które uzyskują dostęp do interfejsu API Foundry i wykonywanie Zachowań Skryptu w Strefach Sceny.",
 "PERMISSION.ManualRolls": "Wykonywanie ręcznych rzutów",
 "PERMISSION.ManualRollsHint": "Zezwól użytkownikom z tą rolą na ręczne wprowadzanie rzutów.",
@@ -3468,7 +3468,7 @@
     "scaleY.label": "Pionowo",
     "tint.label": "Odcień koloru"
   },
-  "alpha.label": "Nieprzezroczystość kafelka",
+  "alpha.label": "Przezroczystość kafelka",
   "occlusion": {
     "mode.label": "Tryb okluzji",
     "alpha.label": "Okluzja Alfa"
@@ -3514,8 +3514,8 @@
   },
   "Now": "Teraz",
   "Second": {
-    "one": "Sekunda",
-    "other": "Sekundy",
+    "one": "Sekunda2",
+    "other": "Sekundy3",
     "abbr": "s"
   },
   "Since": "{since} temu",
@@ -3595,7 +3595,7 @@
     "label": "Kształt",
     "hint": "Kształt tokena."
   },
-  "alpha.label": "Nieprzezroczystość Tokena",
+  "alpha.label": "Przezroczystość Tokena",
   "ring": {
     "colors": {
       "ring": {
