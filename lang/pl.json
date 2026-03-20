@@ -1117,9 +1117,9 @@
     "ROUNDS_AGO": {
       "one": "1 runda temu",
       "two": "2 rundy temu",
-      "few": "{rounds} rundy temu",
+      "few": "{rounds} rund temu",
       "many": "{rounds} rund temu",
-      "other": "{rounds} rundy temu"
+      "other": "{rounds} rund temu"
     },
     "TURNS": {
       "one": "1 tura",
@@ -1131,9 +1131,9 @@
     "TURNS_AGO": {
       "one": "1 tura temu",
       "two": "2 tury temu",
-      "few": "{turns} tury temu",
+      "few": "{turns} tur temu",
       "many": "{turns} tur temu",
-      "other": "{turns} tury temu"
+      "other": "{turns} tur temu"
     },
     "EXPIRY_EVENTS": {
       "combatStart": "Rozpoczęcie walki",
@@ -1795,7 +1795,6 @@
   "Angle": "Kąt",
   "Coordinates": "Współrzędne",
   "Degrees": "Stopnie",
-  "Depth": "Głębokość",
   "Direction": "Kierunek",
   "Distance": "Dystans",
   "GridSpaces": "Pola siatki",
@@ -4012,7 +4011,7 @@
 "TOKEN.BarValues": "Pojedyncze wartości",
 "TOKEN.DeleteCombatantWarning": "Usuwasz token, który jest w walce. Jego uczestnik walki zostanie trwale usunięty.",
 "TOKEN.DeleteAttachedRegionWarning": "Usuwasz token, do którego przypisana jest strefa. Przypisane do niego strefy zostaną trwale usunięte.",
-"TOKEN.Dimensions": "Wymiary",
+"TOKEN.Size": "Rozmiar",
 "TOKEN.Anchor": "Zakotwiczenie",
 "TOKEN.AnchorHint": "Domyślne zakotwiczenie (0.5, 0.5) to środek obrazu tokena.",
 "TOKEN.ImageAlts": "Alternatywny Token postaci",
@@ -4046,6 +4045,9 @@
 "TOKEN.FIELDS": {
   "name.label": "Nazwa Tokena",
   "sort.label": "Sortuj",
+  "width.label": "Rozmiar X",
+  "height.label": "Rozmiar Y",
+  "depth.label": "Rozmiar Z",
   "movementAction.label": "Akcja ruchu",
   "actorId.label": "Reprezentowana postać",
   "actorLink.label": "Powiąż dane postaci",
@@ -4341,6 +4343,15 @@
     "fly.label": "Lot",
     "swim.label": "Pływanie",
     "walk.label": "Chód"
+  },
+  "NOTIFICATIONS": {
+    "PLAN": {
+      "DirectViolation": "Podczas planowania tego przemieszczenia nie można wyznaczać punktów pośrednich.",
+      "MinCostViolation": "Planowana trasa przemieszczania się nie spełnia wymogów dotyczących minimalnego kosztu.",
+      "MaxCostViolation": "Planowana trasa ruchu przekracza maksymalny dopuszczalny koszt.",
+      "MinDistanceViolation": "Planowana trasa ruchu nie spełnia wymogu minimalnej odległości.",
+      "MaxDistanceViolation": "Planowana trasa ruchu przekracza maksymalną dopuszczalną odległość."
+    }
   }
 },
 
@@ -4761,8 +4772,8 @@
     "rectangle": {
       "name": "Kwadrat",
       "FIELDS": {
-        "width.label": "Szerokość",
-        "height.label": "Wysokość",
+        "width.label": "Rozmiar X",
+        "height.label": "Rozmiar Y",
         "anchorX.label": "X-Zakotwiczenia",
         "anchorY.label": "Y-Zakotwiczenia"
       },
@@ -4833,7 +4844,7 @@
         "shape.label": "Kształt"
       },
       "position.label": "Pozycja",
-      "dimensions.label": "Wymiary"
+      "size.label": "Rozmiar"
     },
     "grid": {
       "name": "Pola siatki",
