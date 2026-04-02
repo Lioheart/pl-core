@@ -685,6 +685,7 @@
   "RegionSelect": "Zaznacz strefy",
   "RegionSelectP": "Wybierz jedną lub więcej Stref w Scenie. Zaznaczona Strefa ma jednolity kolor, a niezaznaczone Strefy mają paski.",
   "RegionTemplateMode": "Tryb szablonu pomiarowego",
+  "RegionTemplateModeP": "Po włączeniu tej opcji paleta jest ignorowana, a każdy narysowany kształt tworzy nową strefę. Nie można dodawać kształtów do istniejących stref.",
   "RegionRectangle": "Narysuj kwadrat",
   "RegionCircle": "Narysuj okrąg",
   "RegionEllipse": "Narysuj elipsę",
@@ -699,7 +700,10 @@
   "RegionClear": "Wyczyść strefy",
   "RegionPerformance": "<em>Uwaga dotycząca wydajności:</em> Każdy rysunek to osobny kształt. Należy uważać, aby nie umieszczać wielu kształtów całkowicie wewnątrz siebie. Zamiast łączyć proste kształty w celu utworzenia złożonego kształtu, rozważ użycie narzędzia Wielokąt Strefy.",
   "ClearAll": "Wyczyść wszystkie obiekty",
-  "ClearAllHint": "Trwale usunąć wszystkie {type} z tej Sceny?",
+  "ClearAllOwned": "Usuń wszystkie posiadane obiekty",
+  "ClearAllHint": "Czy chcesz trwale usunąć wszystkie obejrzane obiekty typu {type}?",
+  "ClearAllOwnedHint": "Czy chcesz trwale usunąć wszystkie obejrzane obiekty typu {type}, które posiadasz?",
+  "DeleteLockedObjects": "Usuń zablokowane obiekty",
   "HeaderGame": "Ogólne sterowanie grą",
   "HeaderGameNotes": "Te ustawienia dotyczą wszystkich aspektów funkcjonalności Foundry",
   "HeaderCanvas": "Sterowanie warstwą płótna",
@@ -792,7 +796,6 @@
   "TooltipDismiss": "Odrzuć zablokowaną podpowiedź",
   "TooltipLock": "Zablokuj podpowiedź",
   "WallHeader": "Sterowanie warstwą ścian",
-  "WallChain": "Tworzenie łańcucha ściany",
   "WallSelectChain": "Wybierz połączone segmenty",
   "DrawingHeader": "Sterowanie narzędziem rysowania",
   "DrawingTextConfirm": "Potwierdź rysowany tekst",
@@ -1973,8 +1976,8 @@
 "SCENE.AccessibilityAll" : "Wszyscy gracze",
 "SCENE.Activate": "Aktywuj",
 "SCENE.Audio": "Audio",
-"SCENE.BackgroundScale": "Skala obrazu tła",
-"SCENE.BackgroundScaleHint": "Użyj SHIFT+pokrętło myszy albo SHIFT+strzałka w górę i SHIFT+strzałka w dół aby dostosować rozmiar obrazu tła.",
+"SCENE.BackgroundScale": "Skala sceny",
+"SCENE.BackgroundScaleHint": "Aby zmienić skalę sceny, użyj kombinacji klawiszy SHIFT + kółko myszy lub SHIFT + strzałka w górę i SHIFT + strzałka w dół.",
 "SCENE.CaptureInitialViewPosition": "Przechwycona pozycja płótna jako widok początkowy w formularzu konfiguracji sceny.",
 "SCENE.Configure": "Konfiguracja",
 "SCENE.CurrentLevel": "Obecny poziom",
@@ -1985,6 +1988,7 @@
 "SCENE.DimensionChangeTitle": "Zmienić wymiary sceny?",
 "SCENE.DimensionChangeWarning": "Zmieniasz podstawowe wymiary tej Sceny, jeśli już umieściłeś obiekty w tej Scenie, ta operacja może spowodować przesunięcie tych obiektów względem obrazu tła",
 "SCENE.DimensionLinked": "Wymiary sceny są obecnie połączone: zmiana jednego z nich spowoduje zmianę drugiego w celu zachowania proporcji. Kliknij, aby usunąć powiązanie.",
+"SCENE.DeterminingDimensions": "Określanie wymiarów sceny.",
 "SCENE.DimensionUnlinked": "Wymiary sceny są obecnie niepowiązane, zmiana jednego z nich nie spowoduje zmiany drugiego. Kliknij, aby połączyć.",
 "SCENE.DistortedDimensionsTitle": "Zniekształcony wymiar sceny",
 "SCENE.DistortedDimensionsWarning": "Wybrano nowe wymiary, które mają inne proporcje niż oryginalne. Czy chcesz automatycznie zmienić położenie umieszczonych obiektów, takich jak tokeny? Rezultat może być zniekształcony.",
@@ -2002,7 +2006,7 @@
 "SCENE.GridAppearance": "Wygląd",
 "SCENE.GridAppearanceHint": "Skonfiguruj wygląd linii siatki.",
 "SCENE.GridConfigTool": "Narzędzie konfiguracji siatki",
-"SCENE.GridConfigToolHint": "Skonfiguruj położenie siatki i obrazu tła za pomocą kółka myszy i klawiszy strzałek lub ręcznie ustawiając następujące pola.",
+"SCENE.GridConfigToolHint": "Skonfiguruj siatkę i przesunięcie sceny za pomocą kółka myszy i klawiszy strzałek lub ręcznie wprowadzając wartości w poniższych polach.",
 "SCENE.GridGridless": "Bez siatki",
 "SCENE.GridSquare": "Kwadrat",
 "SCENE.GridHexOddR": "Sześciokątne rzędy - nieparzyste",
@@ -2013,8 +2017,8 @@
 "SCENE.GridMechanics": "Mechanika",
 "SCENE.GridSizeError": "Ta zmiana rozmiaru zmniejszyłaby rozmiar siatki poniżej minimum 50px. Jeśli chcesz zmniejszyć do tego rozmiaru, najpierw zmień na bez siatki i zresetuj nową siatkę po zmianie rozmiaru.",
 "SCENE.GridResizeHint" : "Użyj ALT+pokrętło myszy lub ALT+strzałka w górę i ALT+strzałka w dół, aby dostosować rozmiar siatki.",
-"SCENE.GridPosition": "Przesunięcie obrazu tła",
-"SCENE.GridPositionHint": "Użyj strzałek aby zmienić położenie obrazu tła.",
+"SCENE.GridPosition": "Przesunięcie sceny",
+"SCENE.GridPositionHint": "Użyj klawiszy strzałek, aby dostosować przesunięcie sceny.",
 "SCENE.GridReset": "Resetuj zmiany",
 "SCENE.InheritedField": "Wartość tego pola jest dziedziczona z poziomu „{level}”. Kliknij tutaj, aby edytować ją bezpośrednio.",
 "SCENE.InitialLevel": "Poziom początkowy",
@@ -2060,7 +2064,7 @@
   "transition": {
     "type": {
       "label": "Typ przejścia",
-      "hint": "Rodzaj animacji przejścia odtwarzanej podczas ładowania sceny."
+      "hint": "Rodzaj animacji przejścia wyświetlanej podczas przeglądania sceny."
     },
     "duration": {
       "label": "Czas trwania",
@@ -2086,14 +2090,6 @@
     "offsetY.label": "Pionowo"
   },
   "backgroundColor.label": "Kolor tła",
-  "foreground": {
-    "label": "Obraz pierwszoplanowy",
-    "hint": "Opcjonalny obraz pierwszego planu, który jest rysowany nad innymi obiektami w Scenie."
-  },
-  "foregroundElevation": {
-    "label": "Wysokość pierwszego planu",
-    "hint": "Wysokość w jednostkach odległości, która konfiguruje wysokość obrazu pierwszoplanowego i płytek nadrzędnych."
-  },
   "initial.scale.label": "Przybliżenie",
   "grid": {
     "type.label": "Typ siatki",
@@ -2241,7 +2237,10 @@
       "src.label": "Tekstura",
       "color.label": "Kolor",
       "tint.label": "Odcień",
-      "alphaThreshold.label": "Próg alfa"
+      "alphaThreshold": {
+        "label": "Próg alfa",
+        "hint": "Piksele w teksturze tła, których wartości alfa są niższe od tego progu, nie ograniczają rozprzestrzeniania się światła ani efektów pogodowych."
+      }
     },
     "elevation": {
       "label": "Zakres wysokości",
@@ -2605,6 +2604,8 @@
   "WorldCreating": "Tworzenie świata...",
   "WorldCreateCancel": "Anuluj tworzenie świata",
   "WorldCreateDependencyFail": "Świat nie mógł zostać utworzony, ponieważ nie zainstalowano wymaganych zależności.",
+  "WorldCreateNoSystem": "Przed kontynuowaniem należy wybrać system gry dla danego świata.",
+  "WorldCreateNoTitle": "Przed kontynuowaniem należy podać nazwę świata.",
   "WorldCreateSuccess": "Tworzenie zakończone sukcesem, uruchamianie...",
   "WorldDelete": "Usuń świat",
   "WorldEdit": "Konfiguracja świata",
@@ -3264,7 +3265,8 @@
   "FIELDS": {
     "color": {
       "label": "Kolor",
-      "hint": "Kolor zastosowany do wizualizacji Strefy."
+      "hint": "Kolor zastosowany do wizualizacji Strefy.",
+      "placeholder": "Losowy kolor"
     },
     "shapes": {
       "label": "Kształty",
@@ -3435,7 +3437,7 @@
   },
   "TOOLTIPS": {
     "CannotChangeLevelsIfAttached": "Strefa musi znajdować się na tym samym poziomie co token, do którego jest przypisana.",
-    "CannotSelectMultipleLevelsIfRestricted": "Ta strefa nie może być uwzględniona na wielu poziomach, gdy jest objęta ograniczeniami.",
+    "CannotSelectMultipleLevelsIfRestricted": "Ta strefa nie może być uwzględniona w wielu poziomach, dopóki jest objęta ograniczeniami.",
     "CannotEnableRestriction": "Ta strefa nie może zostać ograniczona, ponieważ jest uwzględniona w więcej niż jednym poziomie."
   }
 },
@@ -3725,7 +3727,8 @@
     "Visible": "Widoczne"
   },
   "Categories": {
-    "NoAuthor": "Brak autora"
+    "NoAuthor": "Brak autora",
+    "NoLevel": "Brak poziomów"
   },
   "Meta": {
     "empty": "Pusty",
@@ -3915,7 +3918,11 @@
     "src.label": "Kafelek obrazu lub wideo",
     "scaleX.label": "Poziomo",
     "scaleY.label": "Pionowo",
-    "tint.label": "Odcień koloru"
+    "tint.label": "Odcień koloru",
+    "alphaThreshold": {
+      "label": "Próg alfa",
+      "hint": "Piksele w obrazie kafelka o wartościach alfa poniżej tego progu nie ograniczają światła ani efektów pogodowych i nie powodują wyblaknięcia przy najechaniu kursorem."
+    }
   },
   "alpha.label": "Przezroczystość kafelka",
   "name": {
@@ -4048,6 +4055,7 @@
   "width.label": "Rozmiar X",
   "height.label": "Rozmiar Y",
   "depth.label": "Rozmiar Z",
+  "level.label": "Poziom",
   "movementAction.label": "Akcja ruchu",
   "actorId.label": "Reprezentowana postać",
   "actorLink.label": "Powiąż dane postaci",
@@ -4865,7 +4873,7 @@
     "removeAll": "Usuń wszystkie kształty"
   },
   "NOTIFICATIONS": {
-    "DrawingMultipleObjectsControlled": "Podczas rysowania kształtu należy kontrolować tylko jeden lub żaden {type}!",
+    "DrawingMultipleObjectsControlled": "Podczas rysowania kształtu należy wybrać lub skonfigurować tylko jeden element typu {type} albo nie wybierać żadnego!",
     "ControlWalls": "Kontroluj grupę ścian, które wyznaczają granice pożądanego kształtu.",
     "EmptyEnclosedArea": "Obszar zamknięty przez kontrolowane ściany jest pusty! Upewnij się, że zewnętrzne ściany tworzą zamkniętą pętlę i są połączone od punktu do punktu.",
     "NoControlledWalls": "Nie kontrolujesz żadnych ścian!"
