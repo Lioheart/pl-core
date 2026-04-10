@@ -1099,12 +1099,12 @@
         "time": "Czas",
         "combat": "Walka"
       },
-      "years": "Lata",
+      "years": "Lat",
       "months": "Miesiące",
       "weeks": "Tygodnie",
       "days": "Dni",
       "hours": "Godziny",
-      "minutes": "Minuty",
+      "minutes": "Minut",
       "seconds": "Sekundy",
       "combats": "Spotkania bojowe",
       "rounds": "Rundy",
@@ -3525,7 +3525,7 @@
         "sound.label": "Ogranicza dźwięk",
         "occlusion": {
           "label": "Okluzja",
-          "hint": "Gdy token, który można zasłonić, znajduje się pod powierzchnią, kafelki z trybem zasłaniania ustawionym na POWIERZCHNIA oraz wszelkie tekstury poziomu pierwszego planu lub tła na tej samej wysokości lub wyżej zostaną zasłonięte."
+          "hint": "Gdy token, który można zasłonić, znajduje się pod powierzchnią, kafelki z trybem zasłaniania ustawionym na powierzchni oraz wszelkie tekstury poziomu pierwszego planu lub tła na tej samej wysokości lub wyżej zostaną zasłonięte."
         },
         "exposure": {
           "label": "Odkryj podwyższoną powierzchnię",
@@ -3971,24 +3971,24 @@
     "one": "Godzina",
     "two": "Godziny",
     "few": "Godziny",
-    "many": "Godziny",
-    "other": "Godziny",
+    "many": "Godzin",
+    "other": "Godzin",
     "abbr": " godz."
   },
   "Millisecond": {
     "one": "Milisekunda",
     "two": "Milisekundy",
     "few": "Milisekundy",
-    "many": "Milisekundy",
-    "other": "Milisekundy",
+    "many": "Milisekund",
+    "other": "Milisekund",
     "abbr": "ms"
   },
   "Minute": {
     "one": "Minuta",
     "two": "Minuty",
     "few": "Minuty",
-    "many": "Minuty",
-    "other": "Minuty",
+    "many": "Minut",
+    "other": "Minut",
     "abbr": " min"
   },
   "Now": "Teraz",
@@ -3996,8 +3996,8 @@
     "one": "Sekunda",
     "two": "Sekundy",
     "few": "Sekundy",
-    "many": "Sekundy",
-    "other": "Sekundy",
+    "many": "Sekund",
+    "other": "Sekund",
     "abbr": " s"
   },
   "Since": "{since} temu",
@@ -4005,8 +4005,8 @@
     "one": "Rok",
     "two": "Lata",
     "few": "Lata",
-    "many": "Lata",
-    "other": "Lata",
+    "many": "Lat",
+    "other": "Lat",
     "abbr": "r"
   }
 },
@@ -4769,7 +4769,7 @@
         "hole.label": "Czy otwór",
         "gridBased": {
           "label": "Czy oparty na siatce",
-          "hint": "Kształt oparty na siatce jest zgodny z metryką siatki."
+          "hint": "Kształt oparty na siatce podlega regułom odległości siatki, zgodnie z ustawieniem gry „Diagonale siatki”."
         },
         "x.label": "X-Źródła",
         "y.label": "Y-Źródła",
