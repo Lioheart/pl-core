@@ -4,7 +4,7 @@
   "ImportSubmit": "Importuj przygodę",
   "ImportProgress": "Importowanie",
   "ImportHeaderOverview": "Przegląd",
-  "ImportHeaderContents": "Zawartosć",
+  "ImportHeaderContents": "Zawartość",
   "ImportHeaderOptions": "Opcje",
   "ImportOverwriteTitle": "Nadpisać istniejącą treść?",
   "ImportOverwriteWarning": "Niektóre treści z przygody <strong>{name}</strong> istnieją już w twoim świecie. Jeśli zaimportujesz przygodę te treści zostaną nadpisane. Chcesz kontynuować?",
@@ -51,7 +51,7 @@
 
   "TABS": {
     "summary": "Podsumowanie",
-    "contents": "Zawartosć"
+    "contents": "Zawartość"
   },
 
   "ACTIONS": {
@@ -1405,6 +1405,7 @@
   "TitleImageVideo": "Przeglądarka obrazów lub wideo",
   "TitleImage": "Przeglądarka obrazów",
   "TitleVideo": "Przeglądarka wideo",
+  "TitleTexture": "Przeglądarka tekstur",
   "TitleAudio": "Przeglądarka dźwięku",
   "TitleText": "Przeglądarka dokumentów",
   "TitleGraphics": "Przeglądarka 3D",
@@ -1828,7 +1829,10 @@
 "MODMANAGE": {
   "Bugs": "Zgłoszenia bugów lub problemów",
   "DeactivateAll": "Dezaktywuj wszystkie moduły",
-  "Readme": "Dokumentacja modułu",
+  "Readme": "Dokumentacja",
+  "Author": "Autor",
+  "Authors": "Autorzy",
+  "URL": "URL",
   "Title": "Zarządzanie modułami",
   "Instructions": "Użyj tego formularza, aby skonfigurować, które moduły są aktywne w aktualnym świecie. Wprowadzanie zmian w aktywnych modułach spowoduje przeładowanie bieżącej sesji.",
   "View": "Moduły wymienione poniżej są obecnie aktywne w tym świecie.",
@@ -1947,6 +1951,7 @@
 "PLAYLIST.SoundPreload": "Wstępnie załaduj dźwięk",
 "PLAYLIST.SoundResume": "Wznów dźwięk",
 "PLAYLIST.SoundStop": "Zatrzymaj dźwięk",
+"PLAYLIST.Preload": "Dźwięki wstępnie załadowane",
 "PLAYLIST.BulkImport": {
   "Title": "Masowy import dźwięków",
   "Hint": "Wybierz folder zawierający dźwięki do zaimportowania.",
@@ -2037,11 +2042,12 @@
 "SCENE.Loading": "Ładowanie {name}",
 "SCENE.Notes": "Notatki sceny",
 "SCENE.Perception": "Percepcja",
-"SCENE.Preload": "Wczytaj Wstępnie",
+"SCENE.Preload": "Załaduj wstępnie",
 "SCENE.Presentation": "Prezentacja",
 "SCENE.Properties": "Właściwości sceny",
 "SCENE.View": "Widok",
 "SCENE.ShiftBG": "Przesunięcie",
+"SCENE.PullEveryone": "Wciągnij wszystkich",
 "SCENE.ToggleNav": "Panel nawigacji",
 "SCENE.FogModeChangeMessage": "Tryb eksploracji mgły uległ zmianie. Spowoduje to ponowne załadowanie eksploracji mgły i zresetowanie widoczności.",
 "SCENE.Transition": {
@@ -2234,8 +2240,7 @@
       "label": "Dodaj poziom"
     },
     "Edit": "Edytuj poziom",
-    "Delete": "Usuń poziom",
-    "View": "Widok"
+    "Delete": "Usuń poziom"
   },
   "FIELDS": {
     "background": {
@@ -3552,6 +3557,10 @@
         "exposure": {
           "label": "Odkryj podwyższoną powierzchnię",
           "hint": "Częściowo odsłaniaj widoczny obszar tej podwyższonej powierzchni dla obserwatorów znajdujących się poniżej i poza nią. Odsłonięty obszar zależy od kąta między obserwatorem a granicą powierzchni, obszar ten zmniejsza się wraz ze wzrostem kąta. Ta opcja jest przydatna w przypadku dachów, balkonów lub innych platform nad głową."
+        },
+        "culling": {
+          "label": "Ukrywaj tokeny",
+          "hint": "Ukryj niekontrolowane tokeny znajdujące się poza aktualnie wyświetlanym poziomem w widoku MG lub gdy funkcja „Widzenie Tokena jest wyłączona. Powierzchnie w tle ukrywają tokeny znajdujące się pod nimi, natomiast powierzchnie na pierwszym planie ukrywają tokeny znajdujące się na nich lub nad nimi."
         }
       },
       "PLACEMENTS": {
@@ -4049,6 +4058,7 @@
 "TOKEN.ImageCycleNext": "Następny obraz tokena",
 "TOKEN.ImageCyclePrev": "Poprzedni obraz tokena",
 "TOKEN.ImagePreview": "Podgląd obrazu tokenu",
+"TOKEN.ImagePathOverridden": "Ten obraz jest zastępowany przez teksturę obiektu Dynamicznego pierścienia tokenu.",
 "TOKEN.Mirror": "Odbicie lustrzane",
 "TOKEN.MirrorX": "Poziomo",
 "TOKEN.MirrorY": "Pionowo",

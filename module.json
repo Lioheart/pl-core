@@ -7,11 +7,12 @@
     "styles/style.css"
   ],
   "esmodules": [
-    "scripts/script.js"
+    "scripts/script.js",
+    "scripts/setting-scope-icons.js"
   ],
   "compatibility": {
     "minimum": "14",
-    "verified": "14.360"
+    "verified": "14.362"
   },
   "authors": [
     {
