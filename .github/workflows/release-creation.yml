@@ -11,17 +11,18 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      # Wykrywamy wersję główną (v13/v14), która posłuży jako stały tag w URLach
+      # Wykrywamy wersję główną (v13/v14), która posłuży jako stały tag w URL-ach
       - name: Detect FVTT branch
         id: detect_branch
         run: |
           TAG="${{ github.event.release.tag_name }}"
+
           if [[ "$TAG" == v13* ]]; then
-            echo "branch=v13" >> $GITHUB_OUTPUT
+            echo "branch=v13" >> "$GITHUB_OUTPUT"
           elif [[ "$TAG" == v14* ]]; then
-            echo "branch=v14" >> $GITHUB_OUTPUT
+            echo "branch=v14" >> "$GITHUB_OUTPUT"
           else
             echo "ERROR: tag must start with v13 or v14"
             exit 1
@@ -51,14 +52,13 @@ jobs:
           zip --recurse-paths ./module.zip \
             module.json lang/ scripts/ styles/ tours/
 
-      # To jest kluczowy krok: 
       # Publikujemy pliki pod stałym tagiem (v13 lub v14), nadpisując poprzednie.
       - name: Update Static Release with Files
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
           name: Release ${{ steps.detect_branch.outputs.branch }}
-          tag: ${{ steps.detect_branch.outputs.branch }} # Tutaj wymuszamy stały tag
+          tag: ${{ steps.detect_branch.outputs.branch }}
           commit: ${{ github.sha }}
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "./module.json, ./module.zip"
