@@ -3,6 +3,12 @@ name: Release Creation
 on:
   release:
     types: [published]
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Existing versioned release tag to rebuild, for example v14.364
+        required: true
+        type: string
 
 jobs:
   build:
@@ -11,40 +17,55 @@ jobs:
     permissions:
       contents: write
 
-    steps:
-      - uses: actions/checkout@v5
+    env:
+      RELEASE_TAG: ${{ github.event.release.tag_name || inputs.release_tag }}
+      REPOSITORY: ${{ github.repository }}
 
-      - name: Detect Foundry release from source branch
+    steps:
+      - name: Check out released version
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.release.tag_name || inputs.release_tag }}
+          fetch-depth: 0
+
+      - name: Detect Foundry release channel
         id: detect_release
         shell: bash
-        env:
-          TARGET_COMMITISH: ${{ github.event.release.target_commitish }}
         run: |
-          BRANCH="${TARGET_COMMITISH#refs/heads/}"
-
-          case "$BRANCH" in
-            v13)
+          case "$RELEASE_TAG" in
+            v13*)
               STATIC_TAG="foundry-v13"
               ;;
-            v14)
+            v14*)
               STATIC_TAG="foundry-v14"
               ;;
             *)
-              echo "ERROR: release must target the v13 or v14 branch."
-              echo "Received target_commitish: $TARGET_COMMITISH"
+              echo "ERROR: release tag must start with v13 or v14."
+              echo "Received release tag: $RELEASE_TAG"
               exit 1
               ;;
           esac
 
-          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
           echo "static_tag=$STATIC_TAG" >> "$GITHUB_OUTPUT"
 
-      - name: Populate Versioned keys in Manifest
+      - name: Verify target releases exist
         shell: bash
         env:
-          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          GH_TOKEN: ${{ github.token }}
           STATIC_TAG: ${{ steps.detect_release.outputs.static_tag }}
-          REPOSITORY: ${{ github.repository }}
+        run: |
+          gh release view "$RELEASE_TAG" \
+            --repo "$REPOSITORY" \
+            > /dev/null
+
+          gh release view "$STATIC_TAG" \
+            --repo "$REPOSITORY" \
+            > /dev/null
+
+      - name: Populate versioned keys in manifest
+        shell: bash
+        env:
+          STATIC_TAG: ${{ steps.detect_release.outputs.static_tag }}
         run: |
           VERSION="${RELEASE_TAG#v}"
 
@@ -69,23 +90,29 @@ jobs:
             rmdir tours/pl
           fi
 
-      - name: Create Module Archive
+      - name: Create module archive
         shell: bash
         run: |
           zip --recurse-paths ./module.zip \
             module.json lang/ scripts/ styles/ tours/
 
-      - name: Upload Files to Existing Static Release
+      - name: Upload files to versioned release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload "$RELEASE_TAG" \
+            module.json \
+            module.zip \
+            --repo "$REPOSITORY" \
+            --clobber
+
+      - name: Update static Foundry release
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
           STATIC_TAG: ${{ steps.detect_release.outputs.static_tag }}
-          REPOSITORY: ${{ github.repository }}
         run: |
-          gh release view "$STATIC_TAG" \
-            --repo "$REPOSITORY" \
-            > /dev/null
-
           gh release upload "$STATIC_TAG" \
             module.json \
             module.zip \
