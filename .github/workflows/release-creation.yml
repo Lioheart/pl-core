@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       release_tag:
-        description: Existing versioned release tag to rebuild, for example v14.364
+        description: Existing release tag to rebuild, for example v14.364
         required: true
         type: string
 
@@ -22,58 +22,20 @@ jobs:
       REPOSITORY: ${{ github.repository }}
 
     steps:
-      - name: Check out released version
+      - name: Check out release tag
         uses: actions/checkout@v5
         with:
           ref: ${{ github.event.release.tag_name || inputs.release_tag }}
-          fetch-depth: 0
 
-      - name: Detect Foundry release channel
-        id: detect_release
-        shell: bash
-        run: |
-          case "$RELEASE_TAG" in
-            v13*)
-              STATIC_TAG="foundry-v13"
-              ;;
-            v14*)
-              STATIC_TAG="foundry-v14"
-              ;;
-            *)
-              echo "ERROR: release tag must start with v13 or v14."
-              echo "Received release tag: $RELEASE_TAG"
-              exit 1
-              ;;
-          esac
-
-          echo "static_tag=$STATIC_TAG" >> "$GITHUB_OUTPUT"
-
-      - name: Verify target releases exist
-        shell: bash
-        env:
-          GH_TOKEN: ${{ github.token }}
-          STATIC_TAG: ${{ steps.detect_release.outputs.static_tag }}
-        run: |
-          gh release view "$RELEASE_TAG" \
-            --repo "$REPOSITORY" \
-            > /dev/null
-
-          gh release view "$STATIC_TAG" \
-            --repo "$REPOSITORY" \
-            > /dev/null
-
-      - name: Populate versioned keys in manifest
-        shell: bash
-        env:
-          STATIC_TAG: ${{ steps.detect_release.outputs.static_tag }}
+      - name: Populate Versioned keys in Manifest
         run: |
           VERSION="${RELEASE_TAG#v}"
 
           jq \
             --arg version "$VERSION" \
             --arg url "https://github.com/$REPOSITORY" \
-            --arg manifest "https://github.com/$REPOSITORY/releases/download/$STATIC_TAG/module.json" \
-            --arg download "https://github.com/$REPOSITORY/releases/download/$STATIC_TAG/module.zip" \
+            --arg manifest "https://github.com/$REPOSITORY/releases/latest/download/module.json" \
+            --arg download "https://github.com/$REPOSITORY/releases/latest/download/module.zip" \
             '.version = $version
              | .url = $url
              | .manifest = $manifest
@@ -82,38 +44,18 @@ jobs:
 
           mv module.tmp.json module.json
 
-      - name: Flatten tours/pl directory
-        shell: bash
+      - name: Create Module Archive
         run: |
-          if [ -d "tours/pl" ]; then
-            find tours/pl -mindepth 1 -maxdepth 1 -exec mv -t tours/ -- {} +
-            rmdir tours/pl
-          fi
+          rm -f module.zip
 
-      - name: Create module archive
-        shell: bash
-        run: |
           zip --recurse-paths ./module.zip \
-            module.json lang/ scripts/ styles/ tours/
+            module.json babele-register.js src/ lang/ styles/ static/
 
-      - name: Upload files to versioned release
-        shell: bash
+      - name: Upload Files to Published Release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release upload "$RELEASE_TAG" \
-            module.json \
-            module.zip \
-            --repo "$REPOSITORY" \
-            --clobber
-
-      - name: Update static Foundry release
-        shell: bash
-        env:
-          GH_TOKEN: ${{ github.token }}
-          STATIC_TAG: ${{ steps.detect_release.outputs.static_tag }}
-        run: |
-          gh release upload "$STATIC_TAG" \
             module.json \
             module.zip \
             --repo "$REPOSITORY" \
