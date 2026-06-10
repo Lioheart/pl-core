@@ -7,44 +7,66 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     permissions:
       contents: write
 
     steps:
       - uses: actions/checkout@v5
 
-      - name: Detect FVTT release channel
-        id: detect_channel
+      - name: Detect Foundry release from source branch
+        id: detect_release
         shell: bash
+        env:
+          TARGET_COMMITISH: ${{ github.event.release.target_commitish }}
         run: |
-          TAG="${{ github.event.release.tag_name }}"
+          BRANCH="${TARGET_COMMITISH#refs/heads/}"
 
-          if [[ "$TAG" == v13* ]]; then
-            echo "channel=v13" >> "$GITHUB_OUTPUT"
-            echo "static_tag=foundry-v13" >> "$GITHUB_OUTPUT"
-          elif [[ "$TAG" == v14* ]]; then
-            echo "channel=v14" >> "$GITHUB_OUTPUT"
-            echo "static_tag=foundry-v14" >> "$GITHUB_OUTPUT"
-          else
-            echo "ERROR: tag must start with v13 or v14"
-            exit 1
-          fi
+          case "$BRANCH" in
+            v13)
+              STATIC_TAG="foundry-v13"
+              ;;
+            v14)
+              STATIC_TAG="foundry-v14"
+              ;;
+            *)
+              echo "ERROR: release must target the v13 or v14 branch."
+              echo "Received target_commitish: $TARGET_COMMITISH"
+              exit 1
+              ;;
+          esac
+
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+          echo "static_tag=$STATIC_TAG" >> "$GITHUB_OUTPUT"
 
       - name: Populate Versioned keys in Manifest
-        uses: microsoft/variable-substitution@v1
-        with:
-          files: 'module.json'
+        shell: bash
         env:
-          url: https://github.com/${{ github.repository }}
-          manifest: https://github.com/${{ github.repository }}/releases/download/${{ steps.detect_channel.outputs.static_tag }}/module.json
-          download: https://github.com/${{ github.repository }}/releases/download/${{ steps.detect_channel.outputs.static_tag }}/module.zip
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          STATIC_TAG: ${{ steps.detect_release.outputs.static_tag }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          VERSION="${RELEASE_TAG#v}"
+
+          jq \
+            --arg version "$VERSION" \
+            --arg url "https://github.com/$REPOSITORY" \
+            --arg manifest "https://github.com/$REPOSITORY/releases/download/$STATIC_TAG/module.json" \
+            --arg download "https://github.com/$REPOSITORY/releases/download/$STATIC_TAG/module.zip" \
+            '.version = $version
+             | .url = $url
+             | .manifest = $manifest
+             | .download = $download' \
+            module.json > module.tmp.json
+
+          mv module.tmp.json module.json
 
       - name: Flatten tours/pl directory
         shell: bash
         run: |
           if [ -d "tours/pl" ]; then
-            mv tours/pl/* tours/ || true
-            rm -rf tours/pl
+            find tours/pl -mindepth 1 -maxdepth 1 -exec mv -t tours/ -- {} +
+            rmdir tours/pl
           fi
 
       - name: Create Module Archive
@@ -53,14 +75,19 @@ jobs:
           zip --recurse-paths ./module.zip \
             module.json lang/ scripts/ styles/ tours/
 
-      - name: Update Static Release with Files
-        uses: ncipollo/release-action@v1
-        with:
-          allowUpdates: true
-          name: Release ${{ steps.detect_channel.outputs.channel }}
-          tag: ${{ steps.detect_channel.outputs.static_tag }}
-          commit: ${{ github.sha }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "./module.json, ./module.zip"
-          makeLatest: true
-          body: "Last updated by release ${{ github.event.release.tag_name }}"
+      - name: Upload Files to Existing Static Release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          STATIC_TAG: ${{ steps.detect_release.outputs.static_tag }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          gh release view "$STATIC_TAG" \
+            --repo "$REPOSITORY" \
+            > /dev/null
+
+          gh release upload "$STATIC_TAG" \
+            module.json \
+            module.zip \
+            --repo "$REPOSITORY" \
+            --clobber
