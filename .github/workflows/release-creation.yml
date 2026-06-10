@@ -49,7 +49,7 @@ jobs:
           rm -f module.zip
 
           zip --recurse-paths ./module.zip \
-            module.json babele-register.js src/ lang/ styles/ static/
+            module.json scripts/ lang/ styles/ tours/
 
       - name: Upload Files to Published Release
         env:
