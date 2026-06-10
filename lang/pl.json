@@ -3863,7 +3863,7 @@
 },
 
 "TABLE": {
-  "AnimateSetting": "Animowane rzuty z tabeli",
+  "AnimateSetting": "Animacja tabeli losowej",
   "AnimateSettingHint": "Wyświetl ruletkowy styl animacji podczas rzutu z tabeli losowej",
   "DrawFlavor": "Losowanie wyniku z tabeli {name}",
   "DrawFlavorPlural": "Losowanie {number} elementów z tabeli {table}",
