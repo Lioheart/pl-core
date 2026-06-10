@@ -1,5 +1,4 @@
 {
-"Foundry Virtual Tabletop": "Foundry Virtual Tabletop",
 "ADVENTURE": {
   "ImportSubmit": "Importuj przygodę",
   "ImportProgress": "Importowanie",
@@ -537,6 +536,7 @@
   "Confirm": "Potwierdź",
   "Default": "Domyślny",
   "Delete": "Usuń",
+  "FoundryVirtualTabletop": "Foundry Virtual Tabletop",
   "Invalid": "Nieprawidłowy",
   "No": "Nie",
   "None": "Brak",
@@ -574,6 +574,10 @@
     "Start": "Importowanie {number} {type} Dokumentów i {folderNumber} Folderów do folderu {folder}. Prosimy o cierpliwość.",
     "Finish": "Pomyślnie zaimportowano {number} {type} Dokumentów i {folderNumber} Folderów do folderu {folder}."
   },
+  "ImportFolder": {
+    "InvalidDocument": "Nie można zaimportować dokumentu typu {type} do kolekcji folderów kompendium {collection}.",
+    "InvalidDocuments": "Dokumenty z folderów można importować wyłącznie do kolekcji folderów w kompendium {collection}."
+  },
   "ImportEntry": "Importuj wpis",
   "Locked": "{title} [Zablokowany]",
   "Migration": {
@@ -590,6 +594,8 @@
     "Warning": "Próbujesz odblokować do edycji kompendium, które nie należy do tego świata. Wszelkie zmiany wprowadzone w tym pakiecie kompendium mogą zostać utracone w przypadku aktualizacji systemu lub modułu, do którego należy. Możesz skopiować kompendium do swojego świata. Czy chcesz kontynuować?"
   },
   "CannotViewWarning": "Nie masz wystarczających uprawnień, aby wyświetlić te kompendium.",
+  "ModifyLocked": "Nie można edytować treści zawartych w tym pakiecie kompendium, ponieważ jest on zablokowany.",
+  "ModifyPermissionDenied": "Nie masz uprawnień do modyfikowania tego pakietu kompendium.",
   "OwnershipInheritBelow": "Dziedzicz poniżej",
   "OwnershipReset": "Przywróć domyślne",
   "ART": {
@@ -2049,7 +2055,7 @@
 "SCENE.ShiftBG": "Przesunięcie",
 "SCENE.PullEveryone": "Wciągnij wszystkich",
 "SCENE.ToggleNav": "Panel nawigacji",
-"SCENE.FogModeChangeMessage": "Tryb eksploracji mgły uległ zmianie. Spowoduje to ponowne załadowanie eksploracji mgły i zresetowanie widoczności.",
+"SCENE.FogModeChangeMessage": "Tryb mgły wojny uległ zmianie. Spowoduje to ponowne załadowanie obszarów objętych mgłą i zresetowanie zasięgu widoczności.",
 "SCENE.Transition": {
   "Animation": "Animacja przejścia",
   "Preview": "Podgląd",
@@ -2141,8 +2147,8 @@
       "hint" : "Sterowanie trybem mgły wojny: \"Brak\" wyłącza eksplorację (tokeny widzą tylko to, co aktualnie widzą), \"Indywidualny\" śledzi eksplorację osobno dla każdego użytkownika, a \"Wspólny\" wykorzystuje jeden stan eksploracji, do którego przyczyniają się wszyscy użytkownicy."
     },
     "overlay": {
-      "label" : "Obraz eksploracji",
-      "hint": "Opcjonalny obraz mgły wojny do narysowania nad niezbadanymi częściami sceny."
+      "label" : "Obraz nieodkrytego terenu",
+      "hint": "Opcjonalny obraz mgły wojny, który ma zostać wyświetlony nad niezbadanymi częściami sceny. Jeśli skonfigurowano kolor dla obszarów niezbadanych, obraz zostanie wyświetlony na nim."
     },
     "colors": {
       "explored": {
@@ -2265,9 +2271,8 @@
       "alphaThreshold.label": "Próg alfa"
     },
     "fog": {
-      "label": "Eksploracja mgły",
-      "src.label": "Tekstura nieodkrytego terenu",
-      "tint.label": "Odcień tekstury"
+      "label": "Mgła wojny",
+      "src.label": "Obraz nieodkrytego terenu"
     },
     "textures": {
       "label": "Pozycjonowanie",
@@ -3261,8 +3266,8 @@
   "CannotApplyToLocked": "Nie można zastosować tej palety do obiektów zablokowanych.",
   "CloneSettings": "Klonuj",
   "MultipleValues": "<Multiple Values>",
-  "Selected": "{document} Paleta [{count}]",
-  "Title": "Paleta {document}"
+  "Selected": "{document} Paleta: Edycja [{count}]",
+  "Title": "Paleta {document}: Ustawienie wstępne"
 },
 
 "REGION": {
@@ -3776,7 +3781,8 @@
     "Title": "Filtr zaawansowany",
     "Level": "Filtruj według poziomu",
     "Tooltip": "Zaawansowane filtry. Kliknij prawym przyciskiem myszy, aby wyczyścić.",
-    "Top": "U góry"
+    "Top": "U góry",
+    "Viewed": "Tylko wyświetlone"
   },
   "Search": {
     "placeholder": "Filtr {name}"
@@ -3867,7 +3873,9 @@
   "AnimateSettingHint": "Wyświetl ruletkowy styl animacji podczas rzutu z tabeli losowej",
   "DrawFlavor": "Losowanie wyniku z tabeli {name}",
   "DrawFlavorPlural": "Losowanie {number} elementów z tabeli {table}",
+  "DrawMaximumIterations": "Nie udało się pobrać dostępnego wpisu z tabeli {name}; osiągnięto maksymalną liczbę iteracji.",
   "NoAvailableResults": "Brak dostępnych wyników, które można wylosować z tej tabeli.",
+  "NoPossibleResults": "Na podstawie tej tabeli i formuły nie można wyciągnąć żadnych wyników.",
   "Result": "Wynik",
   "ResultDescription": "Opis wyniku",
   "SHEETS": {
@@ -4094,6 +4102,7 @@
   "depth.label": "Rozmiar Z",
   "level.label": "Poziom",
   "movementAction.label": "Akcja ruchu",
+  "movementAction.hint": "Po wybraniu opcji Domyślnie ruch dla tego tokenu zostanie ustalony automatycznie.",
   "actorId.label": "Reprezentowana postać",
   "actorLink.label": "Powiąż dane postaci",
   "displayName.label": "Wyświetlana nazwa",
