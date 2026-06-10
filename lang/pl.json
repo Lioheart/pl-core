@@ -3863,11 +3863,11 @@
 },
 
 "TABLE": {
-  "AnimateSetting": "Animowane rzuty z tabeli",
-  "AnimateSettingHint": "Wyświetl ruletkowy styl animacji podczas rzutu z tabeli",
-  "DrawFlavor": "Dobierz z tabeli {name}",
-  "DrawFlavorPlural": "Dobierz {number} elementów z tabeli {table}",
-  "NoAvailableResults": "Nie ma dostępnych wyników, które można by wyciągnąć z tej tabeli.",
+  "AnimateSetting": "Animacja tabeli losowej",
+  "AnimateSettingHint": "Wyświetl ruletkowy styl animacji podczas rzutu z tabeli losowej",
+  "DrawFlavor": "Losowanie wyniku z tabeli {name}",
+  "DrawFlavorPlural": "Losowanie {number} elementów z tabeli {table}",
+  "NoAvailableResults": "Brak dostępnych wyników, które można wylosować z tej tabeli.",
   "Result": "Wynik",
   "ResultDescription": "Opis wyniku",
   "SHEETS": {
@@ -3879,15 +3879,15 @@
       "Edit": "Edytuj",
       "View": "Widok"
     },
-    "OpenResultConfig": "Otwórz konfigurację wyników",
-    "DrawResult": "Wynik losowania",
-    "DrawSpecificResult": "Wylosuj ten rezultat",
+    "OpenResultConfig": "Otwórz konfigurację wyniku",
+    "DrawResult": "Wylosuj wynik",
+    "DrawSpecificResult": "Wylosuj ten wynik",
     "NormalizeResults": "Normalizuj zakresy wyników",
     "ResetResults": "Zresetuj wyniki",
     "CreateResult": "Dodaj nowy wynik",
     "DeleteResult": "Usuń wynik",
-    "ToggleDrawn": "Przełącz status rozstrzygnięcia",
-    "Submit": "Aktualizacja tabeli losowej"
+    "ToggleDrawn": "Przełącz status wylosowania",
+    "Submit": "Aktualizuj tabelę"
   },
   "TABS": {
     "summary": "Podsumowanie",
@@ -3896,7 +3896,7 @@
   "FIELDS": {
     "description.label": "Opis tabeli",
     "formula.label": "Formuła rzutu",
-    "replacement.label": "Rysuj z zastąpieniem",
+    "replacement.label": "Losuj ze zwracaniem",
     "displayRoll.label": "Wyświetl rzuty na czacie"
   }
 },
