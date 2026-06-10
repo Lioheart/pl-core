@@ -3867,7 +3867,7 @@
   "AnimateSettingHint": "Wyświetl ruletkowy styl animacji podczas rzutu z tabeli losowej",
   "DrawFlavor": "Losowanie wyniku z tabeli {name}",
   "DrawFlavorPlural": "Losowanie {number} elementów z tabeli {table}",
-  "NoAvailableResults": "Brak dostępnych wyników, które można by wyciągnąć z tej tabeli.",
+  "NoAvailableResults": "Brak dostępnych wyników, które można wylosować z tej tabeli.",
   "Result": "Wynik",
   "ResultDescription": "Opis wyniku",
   "SHEETS": {
