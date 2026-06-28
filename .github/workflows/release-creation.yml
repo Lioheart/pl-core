@@ -27,17 +27,13 @@ jobs:
         with:
           ref: ${{ github.event.release.tag_name || inputs.release_tag }}
 
-      - name: Populate Versioned keys in Manifest
+      - name: Populate Release URLs in Manifest
         run: |
-          VERSION="${RELEASE_TAG#v}"
-
           jq \
-            --arg version "$VERSION" \
             --arg url "https://github.com/$REPOSITORY" \
             --arg manifest "https://github.com/$REPOSITORY/releases/latest/download/module.json" \
             --arg download "https://github.com/$REPOSITORY/releases/latest/download/module.zip" \
-            '.version = $version
-             | .url = $url
+            '.url = $url
              | .manifest = $manifest
              | .download = $download' \
             module.json > module.tmp.json

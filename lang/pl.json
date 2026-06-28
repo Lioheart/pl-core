@@ -2540,7 +2540,7 @@
       "choices": {
         "default": "Domyślne ustawienia przeglądarki",
         "dark": "Ciemny",
-        "light": "Światło"
+        "light": "Jasny"
       },
       "interface": {
         "label": "Interfejs",
@@ -4358,7 +4358,7 @@
     "RING_GRADIENT": "Gradient pierścienia",
     "RING_PULSE": "Pulsowanie",
     "INVISIBILITY": "Widmowy Impuls",
-    "COLOR_OVER_SUBJECT": "Kolor nad przedmiotem"
+    "COLOR_OVER_SUBJECT": "Kolor nad obiektem"
   },
   "SHEET": {
     "legend": "Dynamiczny pierścień Tokena"
