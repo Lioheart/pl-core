@@ -600,7 +600,8 @@
   "OwnershipReset": "Przywróć domyślne",
   "ART": {
     "CONFIG": {
-      "Hint": "Użyj strzałek, aby dostosować priorytet źródeł grafiki. Gdy jeden aktor ma grafikę pochodzącą z wielu źródeł, zostanie użyta grafika o najwyższym priorytecie.",
+      "Hint": "Użyj strzałek, aby ustawić priorytet źródeł grafiki. Jeśli dany dokument zawiera grafikę pochodzącą z wielu źródeł, zostanie wykorzystana ta o najwyższym priorytecie.",
+      "Items": "Przedmioty",
       "Portraits": "Portrety",
       "PriorityDecrease": "Zmniejsz priorytet",
       "PriorityIncrease": "Zwiększ priorytet",
@@ -1082,6 +1083,7 @@
   "StatusUpgrade": "Wzmocniony",
   "Submit": "Zatwierdź zmiany",
   "CHANGES": {
+    "Unregistered": "Typ zmiany „{type}” nie jest zarejestrowany.",
     "PHASES": {
       "initial": {
         "label": "Początkowy",
