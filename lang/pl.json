@@ -1227,7 +1227,7 @@
   "NoWebGL": "Twoja przeglądarka obecnie nie obsługuje renderowania WebGL, które jest wymagane przez Foundry Virtual Tabletop. Upewnij się, że w przeglądarce jest włączone renderowanie sprzętowe i WebGL.",
   "NoWebGL2": "Twoja przeglądarka nie wspiera renderowania WebGL Wersja 2, a jest to rekomendowane dla Foundry Virtual Tabletop..",
   "BackgroundTextureSize": "Używasz tekstury tła Scene z wymiarami {width}px na {height}px. Jeden albo więcej wymiarów przekracza maksymalny rozmiar tekstury {max}px obsługiwany przez Twoje urządzenie",
-  "InvalidAdminKey": "Dostarczony klucz dostępu administratora wygasł. Jeśli zapomniałeś swojego hasła musisz ręcznie usunąć plik <strong>Config/admin.txt</strong>  z Twojej lokalizacji danych użytkownika.",
+  "InvalidAdminCredentials": "Podana nazwa użytkownika lub hasło administratora serwera są nieprawidłowe. Jeśli zapomniałeś skonfigurowanych danych logowania, musisz ręcznie usunąć plik <strong>Config/admin.txt</strong> z lokalizacji danych użytkownika.",
   "LoadPackages": "Nie udało się połączyć z serwerem Foundry. Upewnij się, że aplikacja zezwala na połączenia wychodzące.",
   "NoTargetUsersForWhisper": "Nie ma użytkowników docelowych dla tego Szeptu. Sprawdź pisownię albo spróbuj użyć zamiast tego \"/w [Nazwa Użytkownika]\".",
   "CantWhisper": "Nie masz uprawnienia do wysyłania wiadomości prywatnych do innych graczy.",
@@ -1458,6 +1458,7 @@
 "INVITATIONS.Copied": "Link do zaproszenia został skopiowany do schowka",
 "INVITATIONS.Instructions": "Udostępnij poniższe zaproszenia użytkownikom którzy chcą dołączyć do Twojej gry. Lokalne zaproszenia są dla użytkowników w sieci lokalnej natomiast internetowy link łączy graczy przez internet na ustawionym porcie",
 "INVITATIONS.Internet": "Internet",
+"INVITATIONS.InternetV6": "Internet (IPv6)",
 "INVITATIONS.Local": "Sieć lokalna",
 "INVITATIONS.Title": "Zaproszenia do gry",
 "INVITATIONS.OpenConnection": "Twoje połączenie wygląda na otwarte",
@@ -1906,9 +1907,9 @@
   "textAnchor.label": "Punkt zakotwiczenia tekstu"
 },
 
-"NUE.FirstLaunchBody": "Wygląda na to, że jest to nowy świat. Aby rozpocząć, powinieneś najpierw dodać wszystkich dodatkowych graczy, których możesz potrzebować poprzez<a class=\"nue-tab\" data-tab=\"settings\">Zarządzanie Użytkownikami</a> . Stamtąd możesz utworzyć <a class=\"nue-tab\" data-tab=\"actors\">Postacie</a> dla nich, oraz dla wszystkich innych postaci które chcesz przedstawić. Mapy i inne rzeczy dotyczące doznań wizualnych można utworzyć poprzez <a class=\"nue-tab\" data-tab=\"scenes\">Sceny</a>, a handouty, notatki, i inne informacje mogą być przechowywane w <a class=\"nue-tab\" data-tab=\"journal\">Notatkach</a>.",
+"NUE.FirstLaunchBody": "Wygląda na to, że jest to nowy świat. Aby rozpocząć, powinieneś najpierw dodać wszystkich dodatkowych graczy, których możesz potrzebować poprzez <a class=\"nue-tab\" data-tab=\"settings\">Zarządzanie Użytkownikami</a> . Stamtąd możesz utworzyć <a class=\"nue-tab\" data-tab=\"actors\">Postacie</a> dla nich, oraz dla wszystkich innych postaci które chcesz przedstawić. Mapy i inne rzeczy dotyczące doznań wizualnych można utworzyć poprzez <a class=\"nue-tab\" data-tab=\"scenes\">Sceny</a>, a handouty, notatki, i inne informacje mogą być przechowywane w <a class=\"nue-tab\" data-tab=\"journal\">Notatkach</a>.",
 "NUE.FirstLaunchHeader": "Pierwsze kroki",
-"NUE.FirstLaunchHint": "<i class=\"fas fa-info-circle\"></i> Tę kartę czatu można \"wyskoczyć\", klikając ją prawym przyciskiem myszy, lub można \"wyskoczyć\" całą kartę czatu, klikając prawym przyciskiem myszy ikonę dymka u góry. Możesz zrobić to samo, aby \"wyskoczyć\" każdą inną kartę paska bocznego.",
+"NUE.FirstLaunchHint": "<i class=\"fas fa-info-circle\"></i> Tę kartę czatu można wyświetlić w trybie podglądu, klikając ją prawym przyciskiem myszy, lub można wyświetlić w trybie podglądu całą zakładkę czatu, klikając prawym przyciskiem myszy ikonę dymku u góry. W ten sam sposób można wyświetlić w trybie podglądu dowolną inną zakładkę na pasku bocznym.",
 "NUE.FirstLaunchInvite": "Zapraszanie twoich graczy",
 "NUE.FirstLaunchInviteBody": "Kiedy wszystko masz już skonfigurowane i gotowy jesteś zaprosić graczy, możesz wysłać im linka do swojego świata poprzez <a class=\"nue-action\" data-action=\"invite\">Linki Zaproszeń</a>.",
 "NUE.FirstLaunchKB": "Upewnij się, że zbadałeś wszystkie zakładki dostępne w tym pasku bocznym, po więcej dokładnych informacji możesz iść do <a href=\"https://foundryvtt.com/article/tutorial/\" target=\"_blank\">Tutorial Mistrza Podziemi</a> w naszej <a href=\"https://foundryvtt.com/kb/\" target=\"_blank\">Bazie Wiedzy</a>.",
@@ -2304,7 +2305,12 @@
 "SCENE_NAVIGATION": {
   "COLLAPSE": "Zwiń nawigację",
   "EXPAND": "Rozwiń nawigację",
-  "LABEL": "Nawigacja scen"
+  "LABEL": "Nawigacja scen",
+  "SCENE": {
+    "Viewing": "Przeglądanie",
+    "Active": "Aktywne",
+    "Hidden": "Ukryty"
+  }
 },
 
 "GRID.STYLES":{
@@ -2343,6 +2349,10 @@
     "OtherSettings": "Inne ustawienia"
   },
   "FIELDS": {
+    "adminUsername": {
+      "label": "Nazwa użytkownika administratora",
+      "hint": "Nazwa użytkownika administratora służy do zabezpieczenia dostępu do sekcji „Ustawienia i konfiguracja” w programie Foundry Virtual Tabletop. Skonfigurowanie nazwy użytkownika administratora jest opcjonalne, ale zalecane."
+    },
     "adminPassword": {
       "label": "Hasło administratora",
       "hint": "Można przypisać specjalne hasło administratora, które jest wymagane w celu uzyskania dostępu do tego ekranu ustawień."
@@ -2549,6 +2559,10 @@
         "hint": "Określ, czy wolisz, aby elementy interfejsu użytkownika były renderowane przy użyciu jasnego czy ciemnego motywu."
       }
     },
+    "chatBackground": {
+      "hint": "Wyświetlaj historię czatu w tle, zamiast nakładać karty czatu na obszar roboczy.",
+      "label": "Czat w tle"
+    },
     "chatNotifications": {
       "label": "Powiadomienia czatu",
       "hint": "Wybierz, czy powiadomienia o nowych wiadomościach czatu mają być wyświetlane jako pełne karty czatu, czy tylko jako symbol kropki na karcie czatu.",
@@ -2651,16 +2665,18 @@
   "FavoritePackage": "Ulubione",
   "Verified": "Pakiet jest zweryfikowany dla tej wersji Foundry",
   "ErrorTimeout": "Upłynął limit czasu żądania do {url} po {timeout}",
+  "GoBack": "Wróć",
+
+  "ShuttingDown": {
+    "Confirm": "Czy na pewno chcesz wyłączyć serwer?",
+    "Title": "Wyłączanie",
+    "Message": "Serwer jest wyłączany. Aby ponownie uzyskać do niego dostęp, konieczne będzie jego ponowne uruchomienie.",
+    "Unavailable": "Serwer nie jest jeszcze dostępny. Sprawdź, czy został ponownie uruchomiony, lub spróbuj ponownie za kilka sekund."
+  },
 
   "WarningsTitle": "Ostrzeżenia pakietów",
   "WarningsNone": "Nie masz żadnych ostrzeżeń!",
   "WarningsManage": "Zarządzaj pakietem",
-
-  "ManifestUpdate": "Zaktualizowana wersja dostępna pod nowym adresem URL",
-  "ManifestUpdateAvailable": "Nowsza wersja \"{package}\" jest dostępna pod innym adresem URL. Dzieje się tak, gdy zmienia się lokalizacja hostingu pakietu lub autor.",
-  "PriorManifestUrl": "Dawny manifest URL (Wersja {version})",
-  "UpdatedManifestUrl": "Nowy manifest URL (Wersja {version})",
-  "SwapToTheUpdatedManifest": "Czy chcesz zmienić manifest URL na nowszy? (jest to zalecane)",
 
   "CurrentVersion": "Obecna wersja",
   "ForceUpdate": "Wymusić aktualizację?",
@@ -2691,12 +2707,15 @@
   "PackageInstalled": "Zainstalowano",
   "PackageNotOwned": "Nieposiadane",
   "PackageName": "Nazwa",
+  "PackageOwnershipUnknown": "Właściciel nieznany",
+  "PackageOwnershipUnknownHint": "Nie udało się pobrać informacji o uprawnieniach do tego pakietu ze strony foundryvtt.com, więc nie wiadomo, czy jesteś właścicielem tego pakietu.",
   "PackageProtected": "Chronione",
   "PackageRequiresDowngradeHint": "Aby zainstalować ten pakiet, należy przejść na wersję {vmax} Foundry VTT.",
   "PackageRequiresDowngradeLabel": "Wymaga obniżenia wersji",
   "PackageRequiresUpgradeHint": "Aby zainstalować ten pakiet, należy zaktualizować Foundry VTT do wersji {vmin}.",
   "PackageRequiresUpgradeLabel": "Wymaga aktualizacji",
   "PackageVisAll": "Wszystkie pakiety",
+  "PackageVisOwned": "Posiadane pakiety",
   "PackageVisInst": "Zainstalowano",
   "PackageVisUnin": "Tylko niezainstalowane",
   "PackageVisCompatible": "Kompatybilny",
@@ -2777,8 +2796,8 @@
   "UpdateCompleteAuto": "Aktualizacja zakończona pomyślnie. Ponowne uruchomienie aplikacji Foundry VTT.",
   "UpdateNoInternetError": "Foundry Virtual Tabletop wymaga aktywnego połączenia internetowego do aktualizacji.",
   "UpdateWebsiteUnreachableError": "Nie możemy połączyć się z https://foundryvtt.com w tej chwili, proszę spróbować ponownie później.",
+  "UpdateRequestRefusedError": "https://foundryvtt.com odrzuciło tę prośbę o aktualizację. Nie jest to problem związany z Twoim kluczem licencyjnym. Spróbuj ponownie później.",
   "UpdateWebsiteSlowWarning": "Strona https://foundryvtt.com wydaje się być w tej chwili mocno obciążona, zalecamy ponowną próbę później.",
-  "UpdateWarningWillDisable": "Ta aktualizacja jest nową, główną wersją oprogramowania Foundry Virtual Tabletop. Zainstalowanie tej aktualizacji będzie wymagało wyłączenia niektórych zainstalowanych modułów, które mogą nie być jeszcze kompatybilne.",
   "UpdateButtonDownload": "Pobierz aktualizację {display}",
   "UpdateInfoAvailable": "Aktualizacja Foundry Virtual Tabletop {display} jest już dostępna!",
   "UpdateNotAvailable": "Na żądanym kanale aktualizacji nie jest obecnie dostępna żadna nowa wersja.",
@@ -2805,7 +2824,7 @@
 
   "AdminAccess": "Wymagany dostęp administratora",
   "AdminPasswordPrompt": "Aby uzyskać dostęp do konfiguracji aplikacji, należy podać hasło administratora.",
-  "AdminPasswordForgot": "Jeśli zapomniałeś hasła, możesz je zresetować  <a href='https://foundryvtt.com/article/reset-admin-password/' target='_blank'>podążając tą instrukcją</a>.",
+  "AdminCredentialsForgot": "Jeśli zapomniałeś nazwy użytkownika lub hasła administratora, administrator serwera może je zresetować, <a href=\"https://foundryvtt.com/article/reset-admin-password/\" target=\"_blank\">postępując zgodnie z poniższą instrukcją</a>.",
   "AdminLogIn": "Zaloguj się",
   "AdminLogout": "Wylogowanie admina",
 
@@ -2819,11 +2838,15 @@
     "Configure": "Konfiguracja",
     "Logout": "Wyloguj się",
     "Update": "Zaktualizuj",
-    "Warnings": "Ostrzeżenia"
+    "Warnings": "Ostrzeżenia",
+    "ShutDownServer": "Wyłącz"
   },
 
   "BACKUPS": {
     "Backup": "Kopia zapasowa",
+    "BackupBeforeRestore": "Utwórz kopię zapasową aktualnego stanu",
+    "BackupBeforeRestoreHint": "Zrób kopię zapasową pakietu w obecnym stanie, aby w razie potrzeby można było cofnąć tę operację przywracania.",
+    "BackupBeforeRestoreNote": "Automatyczna kopia zapasowa przed przywróceniem",
     "BackingUp": "Tworzenie kopii zapasowej w toku",
     "BulkActions": "Akcje zbiorcze",
     "Extracting": "Rozpakowywanie kopii zapasowej",
@@ -2871,7 +2894,8 @@
     "Restoring": "Trwa przywracanie kopii zapasowej",
     "RestoreLatest": "Przywróć ostatnie",
     "RestoreLatestBackup": "Przywróć najnowszą kopię zapasową",
-    "RestoreBackupWarning": "Przywrócenie kopii zapasowej spowoduje usunięcie bieżącego stanu pakietu. Tego działania nie można cofnąć. Czy chcesz kontynuować?",
+    "RestoreBackupWarning": "Przywrócenie kopii zapasowej spowoduje usunięcie aktualnego stanu pakietu. O ile nie zdecydujesz się utworzyć kopii zapasowej, zaznaczając poniższe pole wyboru, tej czynności nie da się cofnąć. Czy chcesz kontynuować?",
+    "RestoreBackupWarningNoBackups": "Przywrócenie kopii zapasowej spowoduje usunięcie bieżącego stanu pakietu. Tego działania nie można cofnąć. Czy chcesz kontynuować?",
     "RestoreBackupTitle": "Przywracanie kopii zapasowej dla {title}",
     "RestoreBackupFailure": "Nie udało się przywrócić kopii zapasowej dla {title}. Szczegółowe informacje można znaleźć w konsoli (F12).",
     "RestoreBackupComplete": "Pomyślnie przywrócono {title} z kopii zapasowej wykonanej {date}",
@@ -2941,6 +2965,20 @@
     },
     "ManifestWrongPackageType": "Podany adres URL nie wydaje się wskazywać na {packageType}."
   },
+  "PROVIDER_FILTER": {
+    "Label": "Dostawcy",
+    "Placeholder": "Wyszukaj dostawców"
+  },
+  "SYSTEM_FILTER": {
+    "Label": "Systemy",
+    "Systems": "Wymagany system",
+    "RequiresN": "{count} systemów",
+    "MODES": {
+      "installed": "Dostępne dla zainstalowanych systemów",
+      "none": "Brak ograniczeń",
+      "specific": "Wymaga określonego systemu"
+    }
+  },
   "UPDATE_NOTES": {
     "Title": "Informacje o wersji: {release}",
     "FullList": "Zobacz <a href=\"{url}\" target=\"_blank\">pełną listę</a> informacji o wersji.",
@@ -2968,6 +3006,30 @@
   "Compatibility": {
     "Label": "Kompatybilność",
     "Hint": "Opcjonalnie można wskazać, że ten pakiet jest kompatybilny tylko z szeregiem wersji oprogramowania Foundry Virtual Tabletop. Kompatybilność można zadeklarować dla konkretnej wersji kompilacji, takiej jak \"13.339\" lub dla szerokiej generacji, takiej jak \"13\"."
+  },
+  "TAGS": {
+    "adventures": "Przygody",
+    "ai-content": "Zawiera treści wygenerowane przez AI",
+    "ai-tools": "Narzędzia oparte na technologii AI",
+    "analytics": "Analityka i śledzenie",
+    "archived": "Zarchiwizowane",
+    "audio": "Ulepszenia dźwięku",
+    "automation": "Ulepszenia automatyzacji",
+    "chat": "Historia czatu i wiadomości",
+    "combat": "Ulepszenia walki",
+    "content": "Pakiety treści",
+    "dice": "Rzuty kośćmi",
+    "importer": "Narzędzia do importowania treści",
+    "integration": "Integracje zewnętrzne",
+    "journal": "Dzienniki i notatki",
+    "overhaul": "Zmiany lub pakiety funkcji",
+    "paid-features": "Zawiera płatne funkcje",
+    "patches": "Poprawki lub naprawy błędów",
+    "sheets": "Karty postaci i karty przedmiotów",
+    "tools": "Narzędzia i elementy sterujące",
+    "translation": "Tłumaczenia i lokalizacja",
+    "visuals": "Efekty wizualne",
+    "zero-ai": "Nie zawiera żadnej technologii AI"
   },
   "TagJavaScript": "JavaScript",
   "TagCSS": "CSS",
@@ -3115,7 +3177,7 @@
   "UserKey": "Hasło użytkownika",
   "AuthAdmin": "Jesteś zalogowany jako administrator serwera.",
   "ErrorMustSelectUser": "Aby się zalogować, należy wybrać użytkownika.",
-  "ErrorUserDoesNotExist": "Żądany użytkownik, \"{user}\", nie istnieje!",
+  "ErrorUserDoesNotExist": "Żądany użytkownik, \"{user}\", nie istnieje.",
   "ErrorInvalidPassword": "Wprowadzono nieprawidłowe hasło dla {user}!",
   "ErrorBanned": "{user} nie ma uprawnień dostępu dla tego Świata!",
   "LoginSuccess": "Logowanie jako {user} zakończone powodzeniem, dołączanie do gry!",
@@ -3453,7 +3515,6 @@
   },
   "NOTIFICATIONS": {
     "PlacedRegionRotationNotAllowed": "Nie można obracać kształtu umieszczonej strefy.",
-    "PlacedRegionNotAttachedToToken": "Umieszczona strefa musi być przypisana do tokenu.",
     "CopiedShape": "Skopiowano kształt strefy.",
     "CutShape": "Wytnij kształt strefy.",
     "PastedShape": "Wklejono kształt strefy.",
