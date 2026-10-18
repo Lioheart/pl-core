@@ -2,7 +2,7 @@
   "id": "PolishCore",
   "title": "Polska wersja Foundry [Core]",
   "description": "Polska wersja językowa aplikacji Foundry VTT.",
-  "version": "14.9",
+  "version": "14.10",
   "styles": [
     "styles/style.css"
   ],
@@ -11,8 +11,8 @@
     "scripts/setting-scope-icons.js"
   ],
   "compatibility": {
-    "minimum": "14.366",
-    "verified": "14.367"
+    "minimum": "14.369",
+    "verified": "14.369"
   },
   "authors": [
     {
