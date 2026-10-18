@@ -70,6 +70,10 @@
       "hint": "Opcjonalna nazwa ułatwiająca identyfikację źródła światła.",
       "label": "Nazwa"
     },
+    "hidden": {
+      "label": "Ukryty",
+      "hint": "Tymczasowo wyłącz to źródło światła."
+    },
     "rotation": {
       "label": "Kąt rotacji"
     },
@@ -969,6 +973,10 @@
     "width.label": "Szerokość",
     "height.label": "Wysokość",
     "hidden.label": "Ukryty",
+    "locked": {
+      "label": "Zablokowane",
+      "hint": "Zablokuj możliwość manipulowania płótnem i wprowadzania zmian za pomocą palety."
+    },
     "elevation.label": "Wysokość",
     "rotation.label": "Obrót",
     "sort": {
@@ -1011,6 +1019,10 @@
     "bezierFactor": {
       "label": "Współczynnik wygładzenia",
       "hint": "W przypadku dowolnego rysowania współczynnik wygładzenia kontroluje stopień wygładzania krzywej liniowej."
+    },
+    "hidden": {
+      "label": "Ukryty",
+      "hint": "Ukryj ten rysunek przed wszystkimi graczami z wyjątkiem jego autora."
     },
     "fillAlpha.label": "Ustaw przeźroczystość",
     "fillColor.label": "Kolor wypełnienia",
@@ -1401,7 +1413,7 @@
   "TraverseBack": "Cofnij się",
   "NoResults": "Nie znaleziono pasujących wyników w tej lokalizacji.",
   "Upload": "Załaduj",
-  "CannotUpload": "Przesyłanie do tego folderu jest zabronione, ponieważ jego zawartość może zostać nadpisana podczas aktualizacji. Zamiast tego prześlij zawartość do folderu „assets” lub innej dozwolonej lokalizacji.",
+  "CannotUpload": "Przesyłanie plików do tego folderu jest zabronione. Zamiast tego prześlij je do folderu „assets” lub w inne dozwolone miejsce.",
   "Search": "Szukaj",
   "ErrorTooLarge": "Przesyłany plik jest za duży aby serwer proxy mógł go obsłużyć.",
   "ErrorSomethingWrong": "Coś poszło nie tak z twoim żądaniem załadowania.",
@@ -1452,6 +1464,7 @@
 "GAME.ReturnSetup": "Powróć do menu",
 "GAME.ReturnSetupActiveUser": "W tym świecie jest obecnie aktywny jeszcze jeden użytkownik, który zostanie rozłączony. Czy chcesz kontynuować?",
 "GAME.ReturnSetupActiveUsers": "Jest {number} innych użytkowników aktualnie aktywnych w tym świecie i zostaną rozłączeni. Czy chcesz kontynuować?",
+"GAME.WorldShuttingDown": "Świat gry zostanie zamknięty, a Ty zostaniesz przeniesiony na stronę główną serwera.",
 
 "INFO.SceneViewCanvasDisabled": "Scena \"{nazwa}\" jest teraz wyświetlana, ale nie jest pokazana, ponieważ Płótna gry są wyłączone.",
 
@@ -1473,6 +1486,7 @@
   "Empty": "Pusty slot",
   "ToggleSheet": "Wyświetl {document}",
   "ClearConfirm": "Wyczyścić wszystkie przypisane makra z paska szybkiego dostępu?",
+  "IsLocked": "Nie możesz wykonać tej czynności, gdy pasek skrótów jest zablokowany.",
   "ACTIONS": {
     "Clear": "Wyczyść pasek szybkiego dostępu",
     "Mute": "Wycisz dźwięki",
@@ -2330,6 +2344,33 @@
     "warning": "Modyfikacja tych opcji konfiguracyjnych spowoduje wyłączenie serwera i będzie wymagała jego ręcznego restartu. Czy chcesz kontynuować?",
     "restart": "Serwer Foundry Virtual Tabletop został zamknięty z wprowadzonymi zmianami ustawień. Musisz uruchomić go ponownie ręcznie."
   },
+  "SSL": {
+    "Content": {
+      "Attempt": "Foundry Virtual Tabletop najpierw spróbuje uzyskać certyfikat z zewnętrznej usługi Let's Encrypt. Przeglądarki automatycznie uznają te certyfikaty za wiarygodne, dlatego są one preferowaną metodą włączania protokołu SSL na serwerze. Uzyskanie tych certyfikatów wymaga, aby instancja była publicznie dostępna na porcie 80, co w niektórych okolicznościach może okazać się niemożliwe.",
+      "Fallback": "Jeśli nie uda się uzyskać certyfikatu zaufanego, zamiast niego zostanie wydany certyfikat z podpisem własnym. Takie rozwiązanie nadal zapewnia szyfrowanie połączenia i umożliwia korzystanie z nowoczesnych interfejsów API przeglądarek, jednak przeglądarki nie traktują tych certyfikatów jako zaufanych i wyświetlą wyraźne ostrzeżenie dla Ciebie i Twoich graczy. Ostrzeżenie to można bezpiecznie zignorować.",
+      "DoNotShare": "Należy uważać, aby nikomu nie udostępniać wygenerowanego pliku klucza prywatnego (kończącego się na <code>-key.pem</code>) znajdującego się w folderze „Config”.",
+      "Terms": "Aby złożyć wniosek o certyfikat w serwisie Let's Encrypt, należy wyrazić zgodę na warunki <a href=\"https://letsencrypt.org/repository/\">Umowy z użytkownikiem</a>. Czy chcesz kontynuować?"
+    },
+    "ERRORS": {
+      "CertificateGenerationFailed": "Nie udało się wygenerować certyfikatu. Więcej informacji znajdziesz w logach serwera.",
+      "CouldNotBind": "Nie można odpowiedzieć na żądanie urzędu certyfikacji, ponieważ żądanie przypisania do portu 80 zostało odrzucone.",
+      "NoCandidates": "Nie udało się znaleźć żadnych potencjalnych adresów do wygenerowania certyfikatu.",
+      "NoChallenge": "Let's Encrypt nie udostępnił wyzwania http-01 dla podanego adresu.",
+      "PortUnreachable": "Port 80 nie jest publicznie dostępny.",
+      "ProxySSL": "W tym przypadku certyfikat SSL nie jest wymagany, ponieważ serwer znajduje się już za serwerem proxy, który obsługuje protokół SSL."
+    },
+    "RenewalFailed": "Nie udało się odnowić zarządzanego certyfikatu SSL: {error}",
+    "RenewalFailedInGame": "Nie udało się odnowić zarządzanego certyfikatu SSL. Prawdopodobnie nie spowoduje to żadnych natychmiastowych problemów, ale w dogodnym dla siebie terminie należy powrócić do sekcji „Konfiguracja” i spróbować wygenerować nowy certyfikat lub skontaktować się z osobą zarządzającą instancją Foundry Virtual Tabletop.",
+    "SelfSigned": "Nie udało się uzyskać certyfikatu od Let's Encrypt, więc zamiast tego wydano certyfikat z podpisem własnym: {error}",
+    "Title": "Automatyczne generowanie certyfikatu",
+    "Tooltip": "Automatyczne (ponowne) generowanie certyfikatów SSL i kluczy.",
+    "Trusted": "Uzyskano certyfikat zaufany, który będzie odnawiany automatycznie. Zapisz ustawienia i uruchom ponownie serwer, aby je zastosować.",
+    "Unlock": {
+      "Title": "Wyłącz automatyczne odnawianie",
+      "Tooltip": "Wyłącz automatyczne zarządzanie tym certyfikatem.",
+      "Warning": "Obecnie certyfikatem tym zarządza serwis Foundry Virtual Tabletop, który automatycznie odnawia go przed upływem terminu ważności. Jeśli kontynuujesz, certyfikat zostanie usunięty, a automatyczne odnawianie zostanie wyłączone, co pozwoli Ci na ręczne zarządzanie certyfikatami SSL. Czy chcesz kontynuować?"
+    }
+  },
   "SSLCert": "Certyfikat SSL",
   "Telemetry": {
     "request1": "Jeśli użytkownik wyrazi na to zgodę, Foundry Virtual Tabletop udostępni witrynie foundryvtt.com niewielką ilość anonimowych danych o użytkowaniu, które pozwolą naszemu zespołowi lepiej zrozumieć sposób korzystania z Foundry VTT i pomogą nam ulepszyć oprogramowanie.",
@@ -2404,7 +2445,7 @@
     },
     "sslCert": {
       "label": "Certyfikat",
-      "hint": "Możesz uruchomić serwer z wykorzystaniem szyfrowania SSL podając ścieżki do plików certyfikatów i kluczy. Ścieżki są bezwzględne lub względne do podfolderu Config w danych użytkownika."
+      "hint": "Aby móc korzystać z niektórych nowoczesnych funkcji przeglądarki, takich jak WebRTC (funkcje audio i wideo) lub WebBluetooth (funkcje związane z kostkami Bluetooth), należy skonfigurować protokół Secure Socket Layer (SSL). Aby włączyć SSL, można wygenerować własny certyfikat i plik klucza lub zlecić ich automatyczne wygenerowanie. Ścieżki są bezwzględne lub względne względem podfolderu „Config” w folderze danych użytkownika. Więcej szczegółów można znaleźć w artykule <a href=\"https://foundryvtt.com/article/ssl/\" target=\"_blank\">Certyfikaty SSL</a>."
     },
     "sslKey.label": "Prywatny klucz SSL",
     "awsConfig": {
@@ -2595,7 +2636,7 @@
   "Modules": "Moduły dodatkowe",
   "Systems": "Systemy gier",
   "GettingStarted": "Pierwsze kroki",
-  "NoSystemsMessage": "Aby stworzyć swój pierwszy Świat, musisz najpierw zainstalować  <a class=\"system-install\" data-query=\"\" title=\"Game System\">System Gry</a>. Przejrzyj dostępne systemy i wybierz ten, który chcesz zainstalować. Jeśli nie wiesz którego systemu potrzebujesz, lub twój system nie jest dostępny, zalecamy żeby zainstalować system <a class=\"system-install\" data-query=\"Simple Worldbuilding\" title=\"Simple Worldbuilding\">Prosty Świat</a>. ",
+  "NoSystemsMessage": "Aby stworzyć swój pierwszy świat, musisz najpierw zainstalować <a class=\"system-install\" data-query=\"\" title=\"Game System\">system gry</a>. Poświęć chwilę na zapoznanie się z dostępnymi systemami i wybierz jeden do zainstalowania.",
   "NoWorldsMessage": "Teraz, kiedy masz już System Gry, który dostarcza Ci zasad do gry, będziesz chciał stworzyć Świat Gry. Światy gry to miejsca, które zawierają wszystkie postacie, arkusze, dzienniki i mapy używane do gry, niezależnie od tego czy jest to one-shot czy pełna kampania.",
   "NueWorldDescription": "<p>W celu uzyskania więcej informacji na temat konfigurowania Światów, sprawdź dokumentację <a href='https://foundryvtt.com/article/game-worlds/' target='_blank'>Świat</a> </p>",
   "SeeTutorial": "Dla bardziej szczegółowego poradnika, na temat pierwszych kroków z Foundry VTT możesz odnieść się do: <a href=\"https://foundryvtt.com/article/tutorial/\" target=\"_blank\" title=\"Gamemaster Tutorial\">Tutorialu Mistrza Podziemi</a> w naszej <a href=\"https://foundryvtt.com/kb/\" target=\"_blank\" title=\"Knowledge Base\">Bazie Wiedzy</a>.",
@@ -2742,6 +2783,8 @@
   "PackageDependenciesCouldInstallSingular": "Zależność może być zainstalowana automatycznie.",
   "PackageDependenciesCouldInstallPlural": "{number} zależności mogą być automatycznie zainstalowane.",
   "PackageDependenciesDecline": "Zdecydowałeś się nie instalować wymaganych pakietów zależności dla {title}. Będziesz musiał zainstalować je ręcznie.",
+  "PackageDependenciesUnavailable": "Nie można utworzyć tego świata, ponieważ nie można zainstalować następujących wymaganych zależności:",
+  "PackageDependencyUnlisted": "Ten pakiet nie figuruje na liście.",
   "PackageDependenciesSuccess": "Pomyślnie zainstalowano {title} i {number} zależności.",
   "PackageUpdateCoreUpdateNeeded": "Dostępna jest aktualizacja dla {title}, ale nie można jej zainstalować, ponieważ wymaga ona aktualizacji oprogramowania podstawowego do wersji co najmniej {vmin}. Obecnie używana jest wersja {vcur}.",
   "PackageUpdateCoreUnstable": "Dostępna jest aktualizacja dla {title} ale nie można jej zainstalować, ponieważ wymaga ona wersji oprogramowania core {vmin} która nie jest jeszcze stabilna.",
@@ -2899,6 +2942,7 @@
     "RestoreBackupTitle": "Przywracanie kopii zapasowej dla {title}",
     "RestoreBackupFailure": "Nie udało się przywrócić kopii zapasowej dla {title}. Szczegółowe informacje można znaleźć w konsoli (F12).",
     "RestoreBackupComplete": "Pomyślnie przywrócono {title} z kopii zapasowej wykonanej {date}",
+    "RestoreBackupConfirmCodeInvalid": "Aby potwierdzić żądanie przywrócenia kopii zapasowej, należy wprowadzić dokładny kod.",
     "RestoringSnapshot": "Przywracanie migawki",
     "RestoreSnapshotFailure": "Nie udało się przywrócić migawki. Szczegółowe informacje można znaleźć w konsoli (F12).",
     "RestoreSnapshotComplete": "Pomyślnie przywrócono migawkę wykonaną w dniu {date}.",
@@ -2906,6 +2950,7 @@
     "RestoreSnapshotWarning": "Przywrócenie migawki resetuje stan instalacji Foundry VTT z powrotem do stanu, w którym została wykonana migawka. Wszystkie wersje i stany świata zostaną przywrócone. Wszelkie aktualnie zainstalowane pakiety, które nie istnieją jako część migawki, pozostaną niezmienione. Tego procesu nie można cofnąć.",
     "RestoreSnapshotUnchangedPackages": "<strong>1</strong> pakiet został dodany po wykonaniu migawki i pozostanie niezmieniony po przywróceniu migawki.",
     "RestoreSnapshotUnchangedPackagesPl": "<strong>{count}</strong> pakietów zostało dodanych po wykonaniu migawki i pozostaną one niezmienione po przywróceniu migawki.",
+    "RestoreSnapshotConfirmCodeInvalid": "Aby potwierdzić żądanie przywrócenia migawki, należy wprowadzić dokładny kod.",
     "SelectAll": "Zaznacz wszystko",
     "Snapshot": "Migawka",
     "TakeBackup": "Utwórz kopię zapasową",
@@ -3175,7 +3220,8 @@
   "NextSession": "Następna sesja",
   "SelectUser": "Wybierz użytkownika",
   "UserKey": "Hasło użytkownika",
-  "AuthAdmin": "Jesteś zalogowany jako administrator serwera.",
+  "AuthAdmin": "Zostałeś uwierzytelniony jako administrator serwera.",
+  "AuthRequired": "Konieczne będzie uwierzytelnienie się jako administrator serwera.",
   "ErrorMustSelectUser": "Aby się zalogować, należy wybrać użytkownika.",
   "ErrorUserDoesNotExist": "Żądany użytkownik, \"{user}\", nie istnieje.",
   "ErrorInvalidPassword": "Wprowadzono nieprawidłowe hasło dla {user}!",
@@ -3391,6 +3437,14 @@
     "visibility": {
       "label": "Widoczność",
       "hint": "Skonfiguruj widoczność Strefy."
+    },
+    "hidden": {
+      "label": "Ukryty",
+      "hint": "Ukryj strefę przed graczami i wyłącz jego zachowania."
+    },
+    "locked": {
+      "label": "Zablokowane",
+      "hint": "Zablokuj interakcje z płótnem i edycję palety oraz ukryj strefę, gdy widoczność jest ustawiona tak, by wyświetlać wyłącznie odblokowane strefy."
     },
     "highlightMode": {
       "label": "Tryb podświetlenia",
@@ -3840,6 +3894,9 @@
     "ACTIONS": {
       "Clear": "Wyczyść"
     },
+    "Any": "Dowolny",
+    "Yes": "Tak",
+    "No": "Nie",
     "Bottom": "Na dole",
     "Title": "Filtr zaawansowany",
     "Level": "Filtruj według poziomu",
@@ -3987,7 +4044,8 @@
     "img.label": "Ikona wyniku",
     "documentUuid.label": "Dokument źródłowy",
     "weight.label": "Waga",
-    "range.label": "Zasięg"
+    "range.label": "Zasięg",
+    "description.label": "Opis"
   }
 },
 
@@ -4017,6 +4075,10 @@
   "video": "Wideo"
 },
 "TILE.FIELDS": {
+  "hidden": {
+    "label": "Ukryty",
+    "hint": "Ukryj ten kafelek przed graczami."
+  },
   "sort.label": "Sortuj",
   "texture": {
     "src.label": "Kafelek obrazu lub wideo",
@@ -4159,6 +4221,14 @@
 },
 "TOKEN.FIELDS": {
   "name.label": "Nazwa Tokena",
+  "hidden": {
+    "label": "Ukryty",
+    "hint": "Ukryj ten token przed graczami."
+  },
+  "locked": {
+    "label": "Zablokowane",
+    "hint": "Zapobiegaj przesuwaniu tego tokenu po płótnie."
+  },
   "sort.label": "Sortuj",
   "width.label": "Rozmiar X",
   "height.label": "Rozmiar Y",
