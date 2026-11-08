@@ -642,7 +642,7 @@
   "DrawingRect": "Draw Rectangle",
   "DrawingEllipse": "Draw Ellipse",
   "DrawingPoly": "Draw Polygon",
-  "DrawingPolyP": "<span class=\"reference\">Click + Drag</span> to start then <span class=\"reference\">Click</span> to add points. <span class=\"reference\">Double Click</span> to finish.",
+  "DrawingPolyP": "<span class=\"reference\">Click + Drag</span> to start then <span class=\"reference\">Click</span> to add points. <span class=\"reference\">Right-Click</span> to remove the last point. <span class=\"reference\">Double Click</span> to finish.",
   "DrawingFree": "Draw Freehand",
   "DrawingText": "Draw Text",
   "DrawingClear": "Clear Drawings",
@@ -711,6 +711,8 @@
   "RegionCone": "Draw Cone",
   "RegionLine": "Draw Line",
   "RegionPolygon": "Draw Polygon",
+  "RegionGrid": "Draw Grid Spaces",
+  "RegionGridP": "<span class=\"reference\">Click</span> to add grid spaces. <span class=\"reference\">Right-Click</span> to remove the last grid space. <span class=\"reference\">Double Click</span> to finish.",
   "RegionHole": "Create Holes",
   "RegionHoleP": "When active, any Shape you draw on a Region using any of the Shape tools will create a Hole where the Region's behaviors will not apply.",
   "RegionSnap": "When active, any Shape you draw on a Region using any of the Shape tools will be snapped to the grid.",
@@ -1468,16 +1470,19 @@
 
 "INFO.SceneViewCanvasDisabled": "The Scene \"{name}\" is now viewed but is not displayed because the game Canvas is disabled.",
 
-"INVITATIONS.Copied": "Game invitation link copied to clipboard",
-"INVITATIONS.Instructions": "Share the below invitation links with users who you wish to have join your game. The local invitation link is for users on your local network while the internet link connects via internet on the configured port.",
-"INVITATIONS.Internet": "Internet",
-"INVITATIONS.InternetV6": "Internet (IPv6)",
-"INVITATIONS.Local": "Local Network",
-"INVITATIONS.Title": "Game Invitation Links",
-"INVITATIONS.OpenConnection": "Your connection appears to be open",
-"INVITATIONS.ClosedConnection": "Your connection appears to be closed",
-"INVITATIONS.UnknownConnection": "We couldn't detect your connection status",
-"INVITATIONS.DiscoveryFailed": "Our IP detection service failed to identify your correct IP address, you are using IPv6, or you are not currently connected to the Internet.",
+"INVITATIONS": {
+  "Copied": "Game invitation link copied to clipboard",
+  "Instructions": "Share the below invitation links with users who you wish to have join your game. The local invitation link is for users on your local network while the internet link connects via internet on the configured port.",
+  "Internet": "Internet (IPv4)",
+  "InternetV6": "Internet (IPv6)",
+  "Local": "Local Network",
+  "Recheck": "Re-check Connectivity",
+  "Title": "Game Invitation Links",
+  "OpenConnection": "Your connection appears to be open",
+  "ClosedConnection": "Your connection appears to be closed",
+  "UnknownConnection": "We couldn't detect your connection status",
+  "DiscoveryFailed": "Our IP detection service failed to identify your correct IP address, you are using IPv6, or you are not currently connected to the Internet."
+},
 
 "ITEM.ViewArt": "View Item Artwork",
 
@@ -2364,7 +2369,7 @@
     "SelfSigned": "A certificate from Let's Encrypt could not be obtained, so a self-signed certificate was issued instead: {error}",
     "Title": "Automatically Generate Certificate",
     "Tooltip": "Automatically (re-)generate SSL certificates & keys.",
-    "Trusted": "A trusted certificate was obtained and will be renewed automatically. Save your settings and restart the server to apply it.",
+    "Trusted": "A trusted certificate was obtained and will be renewed automatically. Restart the server to apply it.",
     "Unlock": {
       "Title": "Stop Automatic Renewal",
       "Tooltip": "Stop managing this certificate automatically.",
@@ -3861,7 +3866,7 @@
 },
 
 "SIDEBAR.COMPENDIUM.LABELS": {
-  "Ownership": "Non-default ownership",
+  "Ownership": "Hidden to players",
   "Locked": "Locked"
 },
 
@@ -3881,6 +3886,8 @@
     "Visible": "Visible"
   },
   "Categories": {
+    "Player": "Player-Owned",
+    "Gamemaster": "Gamemaster-Owned",
     "NoAuthor": "No Author",
     "NoLevel": "No Level"
   },
@@ -4653,22 +4660,35 @@
     "character": {
       "label": "Player Character",
       "hint": "Select an Actor from the set which you have at least OBSERVER permission over which represents the main character for this User."
+    },
+    "password": {
+      "label": "Player Password",
+      "hint": "Changing this User's password will log out current sessions associated with it."
     }
   },
   "SHEET": {
     "HEADERS": {
       "INFO": "Player Information",
-      "CHAR": "Player Character"
+      "CHAR": "Player Character",
+      "PASS": "Password Change"
     },
-    "BUTTONS": {
-      "SAVE": "Save Player Configuration",
-      "RELEASE": "Release Character"
-    }
+    "PASSWORD": {
+      "Current": "Password (Current)",
+      "New": "Password (New)",
+      "Wipe": {
+        "label": "Wipe",
+        "hint": "Wipe the current password instead of setting a new one."
+      }
+    },
+    "Submit": "Save Player Configuration"
   },
   "MESSAGES": {
     "KICKED": "User {user} has been <strong>kicked</strong> from the World.",
     "BANNED": "User {user} has been <strong>banned</strong> from the World.",
     "UNBANNED": "User {user} has been <strong>unbanned</strong> from the World."
+  },
+  "ACTIONS": {
+    "releaseCharacter": "Release Character"
   },
   "RoleNone": "None",
   "RolePlayer": "Player",
