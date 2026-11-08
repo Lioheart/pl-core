@@ -642,7 +642,7 @@
   "DrawingRect": "Narysuj kwadrat",
   "DrawingEllipse": "Narysuj elipsę",
   "DrawingPoly": "Narysuj wielokąt",
-  "DrawingPolyP": "<span class=\"reference\">Kliknij + Przeciągnij</span> aby rozpocząć a następnie <span class=\"reference\">Kliknij</span> aby dodać punkty. <span class=\"reference\">Podwójne kliknięcie</span> aby zakończyć.",
+  "DrawingPolyP": "<span class=\"reference\">Kliknij + Przeciągnij</span> aby rozpocząć a następnie <span class=\"reference\">Kliknij</span> aby dodać punkty.<span class=\"reference\">Kliknięcie prawym</span> aby usunąć ostatni punkt. <span class=\"reference\">Podwójne kliknięcie</span> aby zakończyć.",
   "DrawingFree": "Dowolne rysowanie",
   "DrawingText": "Umieść tekst",
   "DrawingClear": "Wyczyść rysunki",
@@ -711,6 +711,8 @@
   "RegionCone": "Narysuj stożek",
   "RegionLine": "Narysuj linię",
   "RegionPolygon": "Narysuj wielokąt",
+  "RegionGrid": "Narysuj pola siatki",
+  "RegionGridP": "<span class=\"reference\">Kliknij</span>, aby dodać pola siatki. <span class=\"reference\">Kliknij prawym przyciskiem myszy</span>, aby usunąć ostatnie pole siatki. <span class=\"reference\">Kliknij dwukrotnie</span>, aby zakończyć.",
   "RegionHole": "Utwórz otwory",
   "RegionHoleP": "Gdy ta opcja jest aktywna, każdy kształt narysowany na Strefie przy użyciu dowolnego narzędzia kształtu tworzy otwór, w którym nie będą stosowane zachowania Strefy.",
   "RegionSnap": "Gdy ta opcja jest aktywna, każdy kształt narysowany na Strefie przy użyciu dowolnego narzędzia kształtu zostanie przyciągnięty do siatki.",
@@ -1468,16 +1470,19 @@
 
 "INFO.SceneViewCanvasDisabled": "Scena \"{nazwa}\" jest teraz wyświetlana, ale nie jest pokazana, ponieważ Płótna gry są wyłączone.",
 
-"INVITATIONS.Copied": "Link do zaproszenia został skopiowany do schowka",
-"INVITATIONS.Instructions": "Udostępnij poniższe zaproszenia użytkownikom którzy chcą dołączyć do Twojej gry. Lokalne zaproszenia są dla użytkowników w sieci lokalnej natomiast internetowy link łączy graczy przez internet na ustawionym porcie",
-"INVITATIONS.Internet": "Internet",
-"INVITATIONS.InternetV6": "Internet (IPv6)",
-"INVITATIONS.Local": "Sieć lokalna",
-"INVITATIONS.Title": "Zaproszenia do gry",
-"INVITATIONS.OpenConnection": "Twoje połączenie wygląda na otwarte",
-"INVITATIONS.ClosedConnection": "Twoje połączenie wygląda na zamknięte",
-"INVITATIONS.UnknownConnection": "Nie możemy ustalić statusu twojego połączenia",
-"INVITATIONS.DiscoveryFailed": "Nasza usługa wykrywania adresów IP nie zidentyfikowała prawidłowego adresu IP, używasz protokołu IPv6 lub nie masz obecnie połączenia z Internetem.",
+"INVITATIONS": {
+  "Copied": "Link do zaproszenia został skopiowany do schowka",
+  "Instructions": "Udostępnij poniższe zaproszenia użytkownikom którzy chcą dołączyć do Twojej gry. Lokalne zaproszenia są dla użytkowników w sieci lokalnej natomiast internetowy link łączy graczy przez internet na ustawionym porcie",
+  "Internet": "Internet (IPv4)",
+  "InternetV6": "Internet (IPv6)",
+  "Local": "Sieć lokalna",
+  "Recheck": "Ponownie zweryfikuj połączenie",
+  "Title": "Zaproszenia do gry",
+  "OpenConnection": "Twoje połączenie wygląda na otwarte",
+  "ClosedConnection": "Twoje połączenie wygląda na zamknięte",
+  "UnknownConnection": "Nie możemy ustalić statusu twojego połączenia",
+  "DiscoveryFailed": "Nasza usługa wykrywania adresów IP nie zidentyfikowała prawidłowego adresu IP, używasz protokołu IPv6 lub nie masz obecnie połączenia z Internetem."
+},
 
 "ITEM.ViewArt": "Pokaż grafikę przedmiotu",
 
@@ -2364,7 +2369,7 @@
     "SelfSigned": "Nie udało się uzyskać certyfikatu od Let's Encrypt, więc zamiast tego wydano certyfikat z podpisem własnym: {error}",
     "Title": "Automatyczne generowanie certyfikatu",
     "Tooltip": "Automatyczne (ponowne) generowanie certyfikatów SSL i kluczy.",
-    "Trusted": "Uzyskano certyfikat zaufany, który będzie odnawiany automatycznie. Zapisz ustawienia i uruchom ponownie serwer, aby je zastosować.",
+    "Trusted": "Uzyskano zaufany certyfikat, który zostanie automatycznie odnowiony. Aby go zastosować, należy ponownie uruchomić serwer.",
     "Unlock": {
       "Title": "Wyłącz automatyczne odnawianie",
       "Tooltip": "Wyłącz automatyczne zarządzanie tym certyfikatem.",
@@ -3861,7 +3866,7 @@
 },
 
 "SIDEBAR.COMPENDIUM.LABELS": {
-  "Ownership": "Własność niebędąca domyślną",
+  "Ownership": "Ukryte dla graczy",
   "Locked": "Zablokowane"
 },
 
@@ -3881,6 +3886,8 @@
     "Visible": "Widoczne"
   },
   "Categories": {
+    "Player": "Należące do gracza",
+    "Gamemaster": "Należące do Mistrza Gry",
     "NoAuthor": "Brak autora",
     "NoLevel": "Brak poziomów"
   },
@@ -4653,22 +4660,35 @@
     "character": {
       "label": "Postać gracza",
       "hint": "Wybierz postać z zestawu, nad którym masz co najmniej uprawnienia OBSERWATORA, który reprezentuje główną postać dla tego użytkownika."
+    },
+    "password": {
+      "label": "Hasło gracza",
+      "hint": "Zmiana hasła tego użytkownika spowoduje wylogowanie wszystkich bieżących sesji powiązanych z tym kontem."
     }
   },
   "SHEET": {
     "HEADERS": {
       "INFO": "Informacje o postaci",
-      "CHAR": "Postać gracza"
+      "CHAR": "Postać gracza",
+      "PASS": "Zmiana hasła"
     },
-    "BUTTONS": {
-      "SAVE": "Zapisz konfigurację postaci",
-      "RELEASE": "Odznacz postać"
-    }
+    "PASSWORD": {
+      "Current": "Hasło (obecne)",
+      "New": "Hasło (nowe)",
+      "Wipe": {
+        "label": "Wyczyść",
+        "hint": "Wymazanie obecnego hasła zamiast ustawiania nowego."
+      }
+    },
+    "Submit": "Zapisz konfigurację postaci"
   },
   "MESSAGES": {
     "KICKED": "Użytkownik {user} został <strong>usunięty</strong> ze Świata.",
     "BANNED": "Użytkownik {user} został <strong>zbanowany</strong> ze Świata.",
     "UNBANNED": "Użytkownik {user} został <strong>odbanowany</strong> ze Świata."
+  },
+  "ACTIONS": {
+    "releaseCharacter": "Odznacz postać"
   },
   "RoleNone": "Brak",
   "RolePlayer": "Gracz",
